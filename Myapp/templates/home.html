@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}<!-- Similar to an extension of a class in OOP-->
+{% block title %} Mates Search | Home{% endblock %}<!--Page title - see Browser Tab-->
+
+{% block content %} <!--Where everything begins - similar to start of a program-->
+
+
+
+{% load static %} <!--Django requires this so as to load ie:images,css and javascript files-->
+<head>
+    <link rel="icon" href="{% static 'images/logo.png' %}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+
+
+
+
+<link rel="stylesheet" href="{% static 'css/home-styles.css' %}" type="text/css"><!--Stylesheet for home.html in static folder-->
+   
+</head>
+<body onload="myFunction()">
+    <div id="loader">
+        <img src="{% static 'images/loader.gif' %}"/>
+    </div>
+
+<div style="display:none;" id="myDiv"  class="animate-bottom">
+    
+    <div style="background-image: url('{% static "images/home.jpg"%}')" class="home-cont-outer"><!--Added background image-->
+        <nav>
+            <ul>
+                <li>
+                    <div class="home-img-cont">
+                        <img src="{% static 'images/logo.png' %}" class="home-img"/>
+                        <p><i>Mates Search</i></p>
+                    
+                    </div>
+                </li>
+                <li>
+                    <a href="">Products</a>
+                </li>
+                <li>
+                  <a href="">About</a>
+                </li>
+                <li>
+                   <a href="">FAQ</a>
+                </li>
+                <li>
+                    <a href="">Resources</a>
+                </li>
+                <li>
+                    <a href="">Blog</a>
+                </li>
+
+            </ul>
+        </nav>
+
+    <div class="home-cont">
+       <p class="home-intro">Find your Soul mate</p>
+       <button class="get-started-btn">Get Started</button>
+    </div>
+    <div class="message-support">
+      <img src="{% static 'images/help.png' %}" class="message-img"/>
+    </div>
+    <p class="mates-copyright">Copyright © 2022 Mates Search Inc, All rights reserved</p>
+</div>
+</div>
+
+
+</body>
+{% endblock %}<!--Closing tag symbolizing end of the program-->
+</html>
