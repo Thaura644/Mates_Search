@@ -45,11 +45,30 @@ nav{
 ul{
     list-style-type:none;
 }
-ul{
+.nav-desktop{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+}
+@media screen and (max-width:768px) {
+    li{
+       font-size: 40px;
+    }
+    .home-cont{
+        width: 300px;
+    }
+    .home-cont>p{
+        font-size: 30px;
+    }
+    .nav-desktop{
+        display: none !important;
+    }
+    .nav-phone{
+        display: none !important;
+    }
+ 
+    
 }
 .get-started-btn{
     width: 200px;
@@ -91,15 +110,13 @@ a{
 
     height: auto;
 }
-.home-cont>p{
+.home-intro{
     color: white;
+    font-weight: bold;
     font-size: 35px;
 
 }
-.home-intro{
-    font-weight: bold;
-    
-}
+
 .home-img-cont{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
@@ -137,17 +154,4 @@ a{
 	text-align:center;
     cursor: pointer;
 
-}
-@media screen and (max-width:768px) {
-    li{
-       font-size: 15px;
-    }
-    .home-cont{
-        width: 300px;
-    }
-    .home-cont>p{
-        font-size: 30px;
-    }
- 
-    
 }

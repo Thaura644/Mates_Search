@@ -1,13 +1,18 @@
 <!DOCTYPE html>
+
+{% block content %} <!--Where everything begins - similar to start of a program-->
+
+
+
+{% load static %} 
 <head>
-    <link rel="icon" href="logo.png" />
+    <link rel="icon" href="{% static 'images/logo.png' %}"/>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   
 
-    <Title>
-        Mates Search | Sign up
-    </Title>
-    <link rel="stylesheet" href="./styles.css" type="text/css"/>
+    <title>{% block title %}Mates Search | Sign-up{% endblock %}</title><!--Title of the base file-->
+
+    <link rel="stylesheet" href="{% static 'css/sign-styles.css' %}" type="text/css"><!--Stylesheet for home.html in static folder-->
 </head>
 <body>
     <div class="login">
@@ -15,7 +20,7 @@
             <ul>
                 <li>
                     <div class="page-title">
-                    <img style="width:30px;height:30px"src="logo.png"/>
+                    <img style="width:30px;height:30px" src="{% static 'images/logo.png' %}"/>
                     <i>Mates Search</i>
                 </div>
                 </li>
@@ -27,7 +32,7 @@
                         <option>Kisw</option>
                     </select>
                 </li>
-                <li><a href="/">Log in</a></li>
+                <li><a href="{% url 'login' %}">Log in</a></li>
             </div>
                 </ul>
         </nav>
@@ -82,8 +87,9 @@
 </form>
     </div>
     <div class="img-box">
-        <img src="dates.jpg" class="img-dates"/>
+        <img src="{% static '/images/dates.jpg'%}" class="img-dates"/>
     </div>
 
 </body>
+{% endblock %}
 </html>

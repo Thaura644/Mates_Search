@@ -16,11 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from . import views
+from mates import urls as mate_urls
 from django.urls import path, include 
 
 urlpatterns = [
     path('',views.home,name="home"),
     path('admin/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls')),
-    
+    path('app/',include(mate_urls)),
    ]

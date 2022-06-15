@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-{% extends 'base.html' %}<!-- Similar to an extension of a class in OOP-->
+<!-- Similar to an extension of a class in OOP-->
+{% extends 'base.html'%}
 {% block title %} Mates Search | Home{% endblock %}<!--Page title - see Browser Tab-->
 
 {% block content %} <!--Where everything begins - similar to start of a program-->
@@ -9,7 +10,7 @@
 {% load static %} <!--Django requires this so as to load ie:images,css and javascript files-->
 <head>
     <link rel="icon" href="{% static 'images/logo.png' %}" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   
 
 
@@ -27,39 +28,47 @@
     
     <div style="background-image: url('{% static "images/home.jpg"%}')" class="home-cont-outer"><!--Added background image-->
         <nav>
-            <ul>
+            
+            <ul >
                 <li>
+                    <div class="animate-top">
                     <div class="home-img-cont">
                         <img src="{% static 'images/logo.png' %}" class="home-img"/>
                         <p><i>Mates Search</i></p>
-                    
+                    </div>
                     </div>
                 </li>
-                <li>
+                <li class="nav-desktop">
                     <a href="">Products</a>
                 </li>
-                <li>
+                <li class="nav-desktop">
                   <a href="">About</a>
                 </li>
-                <li>
+                <li class="nav-desktop">
                    <a href="">FAQ</a>
                 </li>
-                <li>
+                <li class="nav-desktop">
                     <a href="">Resources</a>
                 </li>
-                <li>
+                <li class="nav-desktop">
                     <a href="">Blog</a>
                 </li>
-
+                <li class="nav-phone"><img src="{% static 'images/menu.svg'%}"style="cursor:pointer;width:25px;height:25px;margin-left:auto;margin-right:10px;"/></li>
+               
             </ul>
+         
         </nav>
 
     <div class="home-cont">
+    <div class="animate-bottom1">
        <p class="home-intro">Find your Soul mate</p>
-       <button class="get-started-btn">Get Started</button>
+       <button onclick="window.location='app/register'" class="get-started-btn">Get Started</button>
     </div>
+    </div>
+    <div class="animate-bottom1">
     <div class="message-support">
       <img src="{% static 'images/help.png' %}" class="message-img"/>
+    </div>
     </div>
     <p class="mates-copyright">Copyright © 2022 Mates Search Inc, All rights reserved</p>
 </div>
