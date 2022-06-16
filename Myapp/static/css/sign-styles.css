@@ -1,0 +1,170 @@
+body{
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    
+
+}
+ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.login-cont{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+.login{
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    flex: 0.75;
+}
+.login-box{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+
+}
+.img-box{
+    display: flex;
+    flex: 0.25;
+}
+.language-login-cont{
+    display: flex;
+    flex-direction: row;
+    width: 170px;
+    justify-content: space-between;
+    margin-right: 50px;
+}
+.img-dates{
+    width: 550px;
+    height: 100%;
+
+}
+.gender-cont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px ;
+
+}
+.username-cont,.university-cont,.email-cont{
+    display: flex;
+    flex-direction: column;
+    height: 70px;
+    margin-top: 10px ;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+@media screen and (max-width:768px) {
+    .img-box{
+        display: none;
+    }
+    .login{
+        flex:1;
+    }
+}
+.login-cont-intro-account{
+    font-weight: bold;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+
+}
+.login-cont-intro{
+    font-weight:400;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+}
+.login-cont-intro2{
+    color: gray;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    
+}
+
+.login-input-gender-class{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 10px;
+}
+   
+.username-cont>input,.university-cont>input,.email-cont>input{
+    font-size: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   
+    padding: 0.25em 0.5em;
+    box-shadow: #dd95dd 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    
+    height: 50px;
+    padding: 10px;
+    width: 250px;
+    background-color: #fff;
+    border: none;
+    border-radius: 4px
+}
+.username-cont>input:focus,.university-cont>input:focus,.email-cont>input:focus{
+    border: 1px solid #dd95dd;
+
+}
+select{
+   
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: #dd95dd 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+    background-color: white;
+    list-style: none;
+    border: 1px solid #dd95dd;
+}
+a{
+    text-decoration: none;
+    color: #dd95dd;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   
+
+}
+ul{
+    list-style-type:none;
+}
+.page-title{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    color: #dd95dd;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.agree-terms{
+    display: flex;
+    flex-direction: row;
+    width: 150px;
+    font-size: 10px;
+    justify-content: center;
+    align-items: center;
+    font-weight: 300;
+}
+
+label{
+    margin-bottom: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(187, 184, 184);
+    font-size: 15px;
+    margin-top: 15px;
+}
+button{
+    width: 230px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    border:none;
+    border-radius:10px ;
+    background-color:#dd95dd ;
+    height: 40px;
+    color: white;
+    margin-bottom: 10px;
+}
