@@ -30,7 +30,7 @@ clone this repo
 ### 3.Activating virtual env
 
 ```source bin/activate```
-```if on windows use the down below```
+if on windows use the down below
 ```Scripts\activate.bat```
 
 
