@@ -8,6 +8,15 @@ def user_registration(request):
     context = {}
     return render(request,'sign-up.html',context)
 
+
 def notifications(request):
     context = {}
     return render(request,'notifications.html',context)
+def default_page(request):
+    context = {}
+    return render(request,'default-page.html',context)
+
+def Profile(request):
+    context = {}
+    return render(request,'profile.html',context)
+

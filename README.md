@@ -30,6 +30,9 @@ clone this repo
 ### 3.Activating virtual env
 
 ```source bin/activate```
+if on windows use the down below
+```Scripts\activate.bat```
+
 
 ### 4.Installing requirements
 
@@ -37,11 +40,16 @@ clone this repo
 
 ```pip install -r requirements.txt```
 
-### 5.Start Django
+### 5. Make migrations
+
+```python manage.py makemigrations```
+```python manage.py migrate```
+
+### 6. Start Django
 
 ```python manage.py runserver```
 
-### 6.Open your browser on
+### 7.Open your browser on
 
 ```http://127.0.0.1:8000```
 
