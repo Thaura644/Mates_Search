@@ -1,0 +1,72 @@
+body{
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    overflow-y: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+.nav-bar{
+    display: flex;
+   align-items: center;
+   justify-content: center;
+ 
+height: 60px;
+padding: 5px;
+flex-direction: row;
+box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+
+}
+.discover-cont,.messages-cont,.activities-cont,.search-cont,.notifications-cont{
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+.nav-bar-inner{
+    margin-top: 5px;
+}
+.discover-cont>p,.messages-cont>p,.activities-cont>p,.search-cont>p,.notifications-cont>p{
+font-size: 13px;
+} 
+.img-nav{
+    width: 20px;
+    height: 20px;
+}
+.nav-bar-inner{
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+
+}
+.menu-links{
+    width: 70%;
+}
+.logo{
+    width:40px;
+    height: 40px;
+}
+.menu-links{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+.body{
+    height: 100vh;
+    background-color: rgb(214, 210, 210);
+}
+.profile-cont{
+    border: 1px solid gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:50px;
+    border-radius: 50%;
+    height:50px
+
+}

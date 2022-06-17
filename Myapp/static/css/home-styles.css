@@ -26,7 +26,7 @@ a:hover{
     height: 40px;
 }
 nav{
-
+   
     margin-right: 50px;
     justify-content: space-between;
     width: auto;
@@ -44,13 +44,13 @@ nav{
 }
 ul{
     list-style-type:none;
-}
-.nav-desktop{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
 }
+
+
 @media screen and (max-width:768px) {
     li{
        font-size: 40px;
@@ -64,12 +64,11 @@ ul{
     .nav-desktop{
         display: none !important;
     }
-    .nav-phone{
-        display: none !important;
-    }
+ 
  
     
 }
+
 .get-started-btn{
     width: 200px;
     height: 50px;
