@@ -6,6 +6,7 @@ body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
 }
+
 .nav-bar{
     display: flex;
    align-items: center;
@@ -50,6 +51,32 @@ font-size: 13px;
 .logo{
     width:40px;
     height: 40px;
+}
+
+.notifications-bar{
+    position:absolute;
+    top:50px;
+    padding: 2rem;
+    right:400px;
+    
+    
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+    
+    width: 200px !important;
+    
+    
+    
+    
+    
+    
+    display: flex;
+    flex-direction: column;
+     align-items: center;
+    
+    color: #011627;
+
 }
 .menu-links{
     display: flex;
