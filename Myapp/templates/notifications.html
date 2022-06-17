@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+{% extends 'base.html'%}
+{% block content %} <!--Where everything begins - similar to start of a program-->
+
+
+
+{% load static %} 
+<head>
+    <link rel="icon" href="{% static 'images/logo.png' %}" />
+   
+    <title>{% block title %} Mates Search {% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/notifications.css' %}" type="text/css"><!--Stylesheet for home.html in static folder-->
+   
+</head>
+<body onload="myFunction()">
+    <div id="loader">
+        <img src="{% static 'images/loader.gif' %}"/>
+    </div>
+
+<div style="display:none;" id="myDiv"  class="animate-bottom">
+    
+<div class="nav-bar">
+    <div class="nav-bar-inner">
+        <div class="animate-top">
+        <div class="logo-img">
+            <img class="logo"src="{% static 'images/logo.png'%}">
+        </div>
+        </div>
+        <div class="menu-links">
+        <div class="discover-cont">
+    <img class="img-nav" src="{% static 'images/discover.png'%}"/>
+<p>Discover</p>
+            </div>
+            <div class="messages-cont">
+                    <img class="img-nav" src="{% static 'images/messages.png'%}"/>
+<p>Messages</p>
+            </div>
+            <div class="activities-cont">
+                  <img class="img-nav" src="{% static 'images/activity.png'%}"/>
+                <p>Activities</p>
+            </div>
+            <div class="search-cont">
+                <img class="img-nav" src="{% static 'images/search.svg'%}"/>
+                
+<p>Search</p>
+            </div>
+            <div class="notifications-cont">
+            
+                    <img class="img-nav" src="{% static 'images/notification.png'%}"/>
+                <p>Notifications</p>
+            </div>
+
+        </div>
+        <div class="profile-cont">
+            <img class="img-nav" src="{% static 'images/profile.png'%}"/>
+
+        </div>
+    </div>
+
+</div>
+<div class="body">
+
+</div>
+<!--Footer section-->
+	
+<section id="footer">
+    <div class="footer">
+        <a href="#default" class="logo">Meet</a>
+        <div>
+            <p> Copyright © 2022 Mate Inc, All rights reserved </p>
+            </div>
+       
+    </div>
+</section>
+	
+	<!-- End of footer section--> 
+</div>
+</body>
+{% endblock %}
+</html>
