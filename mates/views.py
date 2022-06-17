@@ -7,3 +7,7 @@ def user_login(request):
 def user_registration(request):
     context = {}
     return render(request,'sign-up.html',context)
+
+def notifications(request):
+    context = {}
+    return render(request,'notifications.html',context)
