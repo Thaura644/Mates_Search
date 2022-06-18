@@ -76,7 +76,7 @@ WSGI_APPLICATION = 'Myapp.config.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 #change this to connect to your local database in XAMPP
-DATABASES = {
+"""DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
@@ -85,13 +85,13 @@ DATABASES = {
 """
 DATABASES = {
     'default': {
-        'ENGINE': 'jango.db.backends.postgresql_psycopg2',
-        'NAME': 'test',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'Mates_Search',
         'USER': 'root',
         'PASSWORD': '',
         'HOST': '127.0.0.1',
-        'PORT': '3306', }
-}"""
+        'PORT': '5433', }
+}
 # 'HOST': '/Applications/XAMPP/xamppfiles/var/mysql/mysql.sock', 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators

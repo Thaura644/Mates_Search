@@ -12,13 +12,8 @@
     <link rel="stylesheet" href="{% static 'css/notifications.css' %}" type="text/css"><!--Stylesheet for home.html in static folder-->
    
 </head>
-<body onload="myFunction()">
-    <div id="loader">
-        <img src="{% static 'images/loader.gif' %}"/>
-    </div>
+<body>
 
-<div style="display:none;" id="myDiv"  class="animate-bottom">
-    
 <div class="nav-bar">
     <div class="nav-bar-inner">
         <div class="animate-top">
@@ -71,7 +66,19 @@
 
 
 </div>
-<div class="footer"></div>
+<!--Footer section-->
+	
+<section id="footer">
+    <div class="footer">
+        <a href="{% url 'home'%}" class="logo-footer"><i style="color:#dd6595">Meet</i></a>
+        <div>
+            <p> Copyright © 2022 Mate Inc, All rights reserved </p>
+            </div>
+       
+    </div>
+</section>
+	
+	<!-- End of footer section--> 
 </div>
 </body>
 {% endblock %}
