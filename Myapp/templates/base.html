@@ -1,0 +1,159 @@
+<!--Base is similar to Base/parent class in OOP.Each child html file has to extend this file,For django to know its part of the application-->
+<html>
+<head>
+ <meta charset="utf-8">
+  <title>{% block title %}Base html{% endblock %}</title><!--Title of the base file-->
+</head>
+<script>
+  var myVar;
+  
+  function myFunction() {
+    myVar = setTimeout(showPage, 3000);
+  }
+  
+  function showPage() {
+    document.getElementById("loader").style.display = "none";
+    document.getElementById("myDiv").style.display = "block";
+  }
+  </script>
+<body>
+  <style>
+@media screen and (min-width:768px){
+  .nav-phone{
+    display: none;
+  }
+
+}
+@media screen and (max-width:768px) {
+    li{
+       font-size: 40px;
+    }
+    .home-cont{
+        width: 300px;
+    }
+    .home-cont>p{
+        font-size: 30px;
+    }
+    .nav-desktop{
+        display: none !important;
+    }
+    .nav-phone{
+      display: flex;
+      width: 100%;
+
+    }
+   
+ 
+    
+}
+     #loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 30px;
+  height: 30px;
+  
+  -webkit-animation: load 2s linear infinite;
+  animation: load 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+.animate-bottom1{
+  position: relative;
+  -webkit-animation-name: animatebottom1;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom1;
+  animation-duration: 1s
+
+}
+@-webkit-keyframes animatebottom1 {
+  from { bottom:-100px; opacity:0 } 
+  to { bottom:0px; opacity:1 }
+}
+
+@keyframes animatebottom1 { 
+  from { bottom:-100px; opacity:0 } 
+  to { bottom:0px; opacity:1 }
+}
+.animate-top{
+  position: relative;
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 3s;
+  animation-name: animatetop;
+  animation-duration: 3s
+
+}
+@-webkit-keyframes animatetop {
+  from { top:-100px; opacity:0 } 
+  to { top:0px; opacity:1 }
+}
+
+@keyframes animatetop { 
+  from { top:-100px; opacity:0 } 
+  to { top:0px; opacity:1 }
+}
+@-webkit-keyframes load{
+  from { bottom:-100px; } 
+  to { bottom:0px; }
+
+}
+@keyframes load{
+  from { bottom:-100px } 
+  to { bottom:0px; }
+
+}
+
+@-webkit-keyframes animatebottom {
+  from { opacity:0 } 
+  to { opacity:1 }
+}
+
+@keyframes animatebottom { 
+  from{ opacity:0 } 
+  to{ opacity:1 }
+}
+
+#myDiv {
+  display: none;
+  
+  
+}
+  </style>
+    
+ <main>
+  {% if messages %}<!--Start of notification block..Handles notifications from system to user-->
+  {% for message in messages%}
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>{{ message }}</strong> <!--notification itsles-->
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+  
+  {% endfor %}
+  {% endif %}<!--end of notification block-->
+  {% block scripts %}<!--Start of the scripts block,If you want to add javascript directly instead from .js file in static-->
+  {% endblock scripts %}<!---->
+    {% block content %}
+    {% endblock %}
+  </main>
+</body>
+</html>
