@@ -12,6 +12,15 @@ body{
   flex-direction: row;
 
 }
+.alert{
+  display: flex;
+  flex-direction: row;
+  color: white;
+  background-color: rgb(202, 78, 78);
+  width: 60%;
+  justify-content: center;
+  align-items: center;
+}
 .login-form-box{
   display: flex;
   flex-direction: column;

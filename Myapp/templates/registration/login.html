@@ -41,7 +41,19 @@
 </div>
         </ul>
     </nav>
+    {% if messages %}<!--Start of notification block..Handles notifications from system to user-->
+  {% for message in messages%}
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>{{ message }}</strong> <!--notification itsles-->
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+  
+  {% endfor %}
+  {% endif %}
   <form class="login-form">
+    
       {% csrf_token %}
       <p class="login-form-intro-text">Your soul mate awaits you</p>
       <p class="login-form-intro">Sign in to your Account</p>
@@ -55,7 +67,7 @@
       <label for="password">
           Password
           </label>
-          <input maxlength="8" type="password" name="password" placeholder="Enter your password" required></input>
+          <input maxlength="15" type="password" name="password" placeholder="Enter your password" required></input>
       
   </div>
   <div class="login-remember">
