@@ -1,8 +1,10 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth import authenticate,login,logout
 from django.contrib import messages
-from .forms import RegisterUserForm
+from .forms import RegisterUserForm,ProfileForm
+from .models import Notifications
 from django.contrib.auth.decorators import login_required
+from django.http import JsonResponse
 
 def user_login(request):
     if request.method == "POST":
@@ -11,9 +13,11 @@ def user_login(request):
         user = authenticate(request,username=username,password=password)
         if user is not None:
             login(request,user)
+            messages.success(request,"Login Successfully")   
+            Notifications.objects.create(user_id=request.user.id,title="Welcome to Mates Search",details="Stop the search and find your soul mate at an instant")
             return redirect('notifications') 
         else:
-            messages.info(request,"Incorrect username or password")   
+            messages.success(request,"Incorrect username or password")   
             return redirect('login') 
                
     else :
@@ -32,11 +36,21 @@ def user_registration(request):
             user = authenticate(username=username,password=password)
             login(request, user)
             messages.success(request,"Your account has successfully been created")
+            #Notifications.object.create(user_id=request.user.id,title="Welcome to Mates Search"
+            #sentTime=,details="Stop the search and find your soul mate at an instant")
             return render(request,'login.html')
     context = {}
-    return render(request,'sign-up.html',context)
+    return render(request,'sign-up.html',)
 
 @login_required
 def notifications(request):
-    context = {}
-    return render(request,'notifications.html',context)
+    notifications = []
+    user_id = request.user.id
+    notification = Notifications.objects.get(user_id=user_id)
+    data = {"title":notification.title,"timeSent":notification.sentTime,"details":notification.details}
+    notifications.append(data)
+    response = JsonResponse(notifications,content_type='application/json',safe=False)
+    return render(request, 'notifications.html',{'notifications': notifications})
+       
+    
+    

@@ -41,20 +41,23 @@
 </div>
         </ul>
     </nav>
+    <div class="alert-cont">
     {% if messages %}<!--Start of notification block..Handles notifications from system to user-->
-  {% for message in messages%}
-  <div class="alert alert-warning alert-dismissible fade show" role="alert">
-  <strong>{{ message }}</strong> <!--notification itsles-->
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button>
-</div>
+    {% for message in messages%}
   
-  {% endfor %}
-  {% endif %}
-  <form class="login-form">
+    <div class="alert" role="alert">
+    <strong>{{ message }}</strong> <!--notification itsles-->
+   
+  </div>
+
     
-      {% csrf_token %}
+    {% endfor %}
+    {% endif %}
+  </div>
+   
+  <form class="login-form" method="POST">
+    {% csrf_token %}
+  
       <p class="login-form-intro-text">Your soul mate awaits you</p>
       <p class="login-form-intro">Sign in to your Account</p>
       <div class="login-username">

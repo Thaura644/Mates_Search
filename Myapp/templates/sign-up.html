@@ -37,6 +37,8 @@
                 </ul>
         </nav>
         <form class="login-cont" method="POST">
+            {% csrf_token %}
+        
             <p class="login-cont-intro">
                 Long-term relationships with like minded people
             </p>
@@ -44,25 +46,26 @@
             <p class="login-cont-intro-account">
                Create New Account
             </p>
+            {{ form.as_p }}
             <div class="username-cont">
-            <label for="login-input-id">*Your Username</label>
-            <input placeholder="Enter your Username" id="login-input-id" class="login-name" required>
+            <label for="username">*Your Username</label>
+            <input placeholder="Enter your Username" name="username" class="login-name" required>
         </input>
     </div>
     <div class="university-cont">
-        <label for="login-input-pwd">*Password</label>
-            <input type="password" maxlength="15" placeholder="Enter your Password" id="login-input-pwd" class="login-name" required>
+        <label for="password">*Password</label>
+            <input type="password" maxlength="8" placeholder="Enter your Password" name="password" class="login-name" required>
         </input>
    </div>
    
   <div class="email-cont">
-        <label for="login-input-email">*Your Email</label>
-            <input placeholder="Enter your Email" id="login-input-email" class="login-name" required>
+        <label for="email">*Your Email</label>
+            <input placeholder="Enter your Email" email="email" class="login-name" required>
         </input>
     </div>
     <div class="university-cont">
-        <label for="login-input-id">*Your University</label>
-            <input placeholder="Enter your University" id="login-input-id" class="login-name" required>  
+        <label for="university">*Your University</label>
+            <input placeholder="Enter your University" id="university" class="login-name" required>  
         </input>
     </div>
     <div class="gender-cont">
