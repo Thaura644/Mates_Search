@@ -6,15 +6,24 @@ body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
 }
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #1876f2;
+    padding: 5px 5%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
 .nav-bar{
     display: flex;
-   align-items: center;
-   justify-content: center;
- 
-height: 60px;
-padding: 5px;
-flex-direction: row;
-box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    padding: 5px;
+    flex-direction: row;
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
 
 }
 .discover-cont,.messages-cont,.activities-cont,.search-cont,.notifications-cont{

@@ -1,0 +1,357 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins', sans-serif;
+    box-sizing: border-box;
+}
+body  {
+    background: #d1bfbf;
+}
+
+
+.logo{
+    width: 160px;
+    margin-right: 45px;
+
+}
+/* .nav-left, .nav-right{
+    display: flex;
+    align-items: center;
+}
+.nav-left ul li{
+    list-style: none;
+    display: inline-block;
+
+}
+.nav-left ul li img{
+    width: 28px;
+    margin: 0 15px;
+}
+.nav-user-icon img{
+    width: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.nav-user-icon{
+    margin-left: 30px;
+} */
+.search-box{
+    background:  #d1bfbf;
+    width: 350px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+
+}
+
+.search-box input{
+    width: 100%;
+    background: transparent;
+    padding: 10px;
+    outline: none;
+    border: 0;
+}
+.online{
+    position: relative;
+}
+.online::after{
+    content: '';
+    width: 7px;
+    height: 7px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    background: #41db51;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.container{
+    display: flex;
+    justify-content: space-between;
+    padding: 13px 5%;
+
+}
+.left-sidebar{
+    background: #cdbffa;
+    flex-basis: 25%;
+    position: sticky;
+    top:70px;
+    align-self: flex-start;
+    /* height: 100vh; */
+}
+ .right-sidebar{
+    background: #cdbffa;
+    flex-basis: 25%;
+    position: sticky;
+    top:70px;
+    align-self: flex-start;
+    background: #fff;
+    padding: 20px;
+    border-radius: 4px;
+    color: #626262; 
+
+}
+
+.main-content{
+    flex-basis: 67% ;
+}
+.imp-links a, .shortcut-links a{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    color: #626262;
+    width:a fit-content;
+
+}
+.shortcut-links a{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    color: #626262;
+    width:a fit-content;
+
+
+}
+
+.imp-links a img{
+    width: 25px;
+    margin-right: 15px;
+}
+.imp-links a:last-child{
+    color: cadetblue;
+}
+.imp-links{
+    border-bottom: 1px solid #ccc;
+}
+.shortcut-links a img{
+    border-radius: 4px;
+    width: 40px;
+    margin-right: 15px
+}
+.shortcut-links p{
+    margin: 25px 0;
+    color: #626262;
+    font-weight: 500;
+}
+.sidebar-title{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 18px;
+}
+.sidebar-title h4{
+    font-weight: 600;
+    font-size: 16px;
+   
+}
+.sidebar-title a{
+    text-decoration: none ;
+    color: #1876f2;
+    font-size: 12px;
+}
+
+.event{
+    display: flex;
+    font-size: 14px;
+    margin-bottom: 20px;
+
+}
+.left-event {
+    border-radius: 10px;
+    height: 65px;
+    width: 65px;
+    margin-right: 15px;
+    padding-top: 10px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0 , 0.1);
+}
+
+.event p{
+    font-size: 12px;
+}
+.event a{
+    font-size: 12px;
+    text-decoration: none;
+    color: #1876f2;
+}
+.left-event span{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #1876f2;
+    color: #fff;
+    font-size: 10px;
+    padding: 4px 0;
+}
+.story-gallery{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.story{
+    flex-basis: 30%;
+    padding-top: 50%;
+    position: relative;
+    background-image: url(images/status-1.png);
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+}
+.story img{
+   position: absolute;
+   width: 45px;
+   border-radius: 50%;
+   top: 10px;
+   left: 10px;
+   border-radius: 5px solid #626262;
+
+}
+.story p{
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+}
+/* p  {
+    padding: 100;
+    justify-content: right;
+    flex: 9;
+} */
+
+
+/* back up css */
+body{
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    overflow-y: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #1876f2;
+    padding: 5px 5%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.nav-bar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    padding: 5px;
+    flex-direction: row;
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+
+}
+.discover-cont,.messages-cont,.activities-cont,.search-cont,.notifications-cont{
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+.nav-bar-inner{
+    margin-top: 5px;
+}
+.discover-cont>p,.messages-cont>p,.activities-cont>p,.search-cont>p,.notifications-cont>p{
+font-size: 13px;
+} 
+.img-nav{
+    width: 20px;
+    height: 20px;
+}
+.nav-bar-inner{
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+
+}
+.menu-links{
+    width: 70%;
+}
+.logo{
+    width:40px;
+    height: 40px;
+}
+.menu-links{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+.body{
+    height: 100vh;
+    background-color: rgb(214, 210, 210);
+}
+.profile-cont{
+    border: 1px solid gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:50px;
+    border-radius: 50%;
+    height:50px
+
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: beige;
+    color: white;
+    text-align: center;
+    justify-content: flex;
+    } 
+     .footer a {
+      float: left;
+      color: black;
+      text-align: right;
+      padding: 12px;
+      text-decoration: none;
+      font-size: 18px;
+      line-height: 10px;
+      border-radius: 10px;
+    }
+    .footer p {
+      text-align: center;
+      color: black;
+      font-size: 12px;
+      line-height: 10px;
+      border-radius: 10px;
+    }
+   
+
+    @media screen and (max-width: 500px) {
+        /* the header here should be set to only show it's icons */
+        .footer{
+          float: none;
+          display: none ;
+        }
+        .footer a{
+          float: none;
+          display: none;
+        }
+        .footer p{
+          float: none;
+          display: none;
+        }
+    
+      }
+    

@@ -5,12 +5,17 @@
 
 
 {% load static %} 
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="{% static 'images/logo.png' %}" />
    
     <title>{% block title %} Mates Search {% endblock %}</title>
     <link rel="stylesheet" href="{% static 'css/notifications.css' %}" type="text/css"><!--Stylesheet for home.html in static folder-->
-   
+
+    
 </head>
 <body onload="myFunction()">
     <div id="loader">
@@ -18,7 +23,7 @@
     </div>
 
 <div style="display:none;" id="myDiv"  class="animate-bottom">
-    
+    <nav>
 <div class="nav-bar">
     <div class="nav-bar-inner">
         <div class="animate-top">
@@ -29,7 +34,7 @@
         <div class="menu-links">
         <div class="discover-cont">
     <img class="img-nav" src="{% static 'images/discover.png'%}"/>
-<p>Discover</p>
+<p href="{% templates 'discover.html'%}">Discover</p>
             </div>
             <div class="messages-cont">
                     <img class="img-nav" src="{% static 'images/messages.png'%}"/>
@@ -58,9 +63,10 @@
     </div>
 
 </div>
-<div class="body">
+</nav>
+<!-- <div class="body">
 
-</div>
+</div> -->
 <!--Footer section-->
 	
 <section id="footer">

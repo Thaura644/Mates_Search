@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+{% block content %} 
+
+
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Mates Search || Meet Jovial{ % endblock % }</title>
+    <link rel="stylesheet" href="{% static 'css/discover.css' %}" type="text/css">
+
+    <!-- <link rel="stylesheet" href="{% static 'css/notifications.css' %}" type="text/css"> -->
+</head>
+<body ">
+    <div >
+        <img src="{% static 'images/loader.gif' %}"/>
+    </div>
+    <div >
+    <!-- <nav>
+        <div class="nav-left">
+            <img src="https://img.icons8.com/dotty/80/000000/circled-j.png" class="logo"/>
+            <ul>
+                <li><img src="https://img.icons8.com/external-kiranshastry-lineal-kiranshastry/64/000000/external-notification-business-kiranshastry-lineal-kiranshastry-1.png"/>notification</li>
+                <li><img src="https://img.icons8.com/wired/64/000000/imessage.png"/>inbox</li>
+                <li><img src="https://img.icons8.com/ios-filled/50/000000/video.png"/>videos</li>
+
+            </ul>
+        </div>
+        <div class="nav-right">
+            <div class="search-box">
+                <img src="{ % static 'images/search.png' %}" >
+                <input type="text" placeholder="Search">
+            </div>
+            <div class="nav-user-icon online">
+                <img src="{ % static 'images/profile-pic.png' %}" >
+            </div>
+        </div>
+    </nav> -->
+
+    <!-- --------- Theee  main nav------ -->
+    <nav>
+        <div class="nav-bar">
+            <div class="nav-bar-inner">
+                <div class="animate-top">
+                <div class="logo-img">
+                    <img class="logo"src="{% static 'images/logo.png'%}">
+                </div>
+                </div>
+                <div class="menu-links">
+                <div class="discover-cont">
+            <img class="img-nav" src="{% static 'images/discover.png'%}"/>
+        <a href="{% url 'discover'%}">Discover</a>
+                    </div>
+                    <div class="messages-cont">
+                            <img class="img-nav" src="{% static 'images/messages.png'%}"/>
+        <p>Messages</p>
+                    </div>
+                    <div class="activities-cont">
+                          <img class="img-nav" src="{% static 'images/activity.png'%}"/>
+                        <p>Activities</p>
+                    </div>
+                    <div class="search-cont">
+                        <img class="img-nav" src="{% static 'images/search.svg'%}"/>
+                        
+        <p>Search</p>
+                    </div>
+                    <div class="notifications-cont">
+                    
+                            <img class="img-nav" src="{% static 'images/notification.png'%}"/>
+                        <p>Notifications</p>
+                    </div>
+        
+                </div>
+                <div class="profile-cont">
+                    <img class="img-nav" src="{% static 'images/profile.png'%}"/>
+        
+                </div>
+            </div>
+        
+        </div>
+        </nav>
+
+    <!--  --------------- End of theeeee main nav --------------  -->
+    <div class="container">
+        <!--  --------left-sidebar ----------- -->
+        <div class="left-sidebar">
+            <div class="imp-links">
+                <a href="#"><img src="{ % static 'images/new.png' % }">Latest news</a>
+                <a href="#"><img src="{ % static 'images/new.png' % }">Friends</a>
+                <a href="#"><img src="{ % static 'images/new.png' % }">Groups</a>
+                <a href="#"><img src="{ % static 'images/new.png' % }">marketplace</a>
+                <a href="#"><img src="{ % static 'images/new.png' % }">Watch</a>
+                <a href="#">See More</a>
+            </div>
+            <div class="shortcut-links">
+                <p>Your shortcuts</p>
+                <a href="#"><img src="{ % static 'images/shortcut-1.png' % }" alt="">Sugars</a>
+                <a href="#"><img src="{ % static 'images/shortcut-2.png' % }" alt="">Sweets</a>
+                <a href="#"><img src="{ % static 'images/shortcut-3.png' % }" alt="">Honeys</a>
+                <a href="#"><img src="{ % static 'images/shortcut-4.png' % }" alt="">Buddies</a>
+            </div>
+        </div>
+
+
+         <!--  --------main-sidebar ----------- -->
+        <div class="main-content">
+            <!-- <div class="story-gallery">
+                <div class="story">
+                    <img src="images/upload.png" >
+                    <p>Meet or mate</p>
+                </div>
+            </div>         --------- this story feature is not a must-->
+        
+            <div class="write-post-container">
+                <div class="user-profile">
+                    <img src="{ % static 'images/profile-pic.png' % }" >
+                    <div>
+                        <p>John Nichola</p>
+                        <small> </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+         <!--  --------subject to change::right-sidebar ----------- -->
+        <div class="right-sidebar">
+            <div clas s="sidebar-title">
+                <h4>Event</h4>
+                <a href="#">See all</a>
+            </div>
+            <div class="event">
+                <div class="left-event">
+                    <h3>18</h3>
+                    <span>March</span>
+                </div>
+
+                <div class="right-event">
+                    <h4>Socials</h4>
+                    <p>Wills tech stack</p>
+                    <a href="#">More info</a>
+                </div>
+            </div>
+
+            <div class="event">
+                <div class="left-event">
+                    <h3>22</h3>
+                    <span>June</span>
+                </div>
+
+                <div class="right-event">
+                    <h4>Alpha Vibe</h4>
+                    <p>vibrace</p>
+                    <a href="#">More info</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Footer section-->
+	
+<section id="footer">
+    <div class="footer">
+        <a href="#default" class="logo">Meet</a>
+        <div>
+            <p> Copyright © 2022 Mate Inc, All rights reserved </p>
+            </div>
+       
+    </div>
+</section>
+	
+	<!-- End of footer section--> 
+    <a target="_blank" href="https://icons8.com/icon/I65PXTJWBC7v/notification"></a>
+    </div>
+</body>
+{% endblock %}
+{% endblock %}
+</html>

@@ -11,6 +11,7 @@ urlpatterns = [
 
     path("register/", views.user_registration, name="register"),#handles user sign-up
     path("notifications/", views.notifications, name="notifications"),
+    path("discover/", views.discover, name="discover")
     # path("register/", views.user_registration, name="register")#handles user sign-up
     
 ]

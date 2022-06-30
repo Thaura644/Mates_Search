@@ -1,4 +1,5 @@
 from django.shortcuts import render,redirect
+from django.http import HttpResponse
 
 def user_login(request):
     context = {}
@@ -7,6 +8,11 @@ def user_login(request):
 def user_registration(request):
     context = {}
     return render(request,'sign-up.html',context)
+
+
+def discover(request):
+    context = {}
+    return render(request, 'discover.html', context)
 
 
 def notifications(request):
