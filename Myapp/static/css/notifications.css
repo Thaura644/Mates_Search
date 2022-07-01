@@ -7,23 +7,24 @@ body{
 
 }
 nav{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: #1876f2;
-    padding: 5px 5%;
-    position: sticky;
-    top: 0;
-    z-index: 100;
+    color: white;
+}
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins', sans-serif;
+    box-sizing: border-box;
 }
 .nav-bar{
     display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 60px;
-    padding: 5px;
-    flex-direction: row;
-    box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+   align-items: center;
+   justify-content: center;
+   
+ 
+height: 60px;
+padding: 5px;
+flex-direction: row;
+box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
 
 }
 .discover-cont,.messages-cont,.activities-cont,.search-cont,.notifications-cont{
@@ -37,13 +38,15 @@ nav{
 .nav-bar-inner{
     margin-top: 5px;
 }
-.discover-cont>p,.messages-cont>p,.activities-cont>p,.search-cont>p,.notifications-cont>p{
+.discover-cont>a,.messages-cont>a,.activities-cont>a,.search-cont>a,.notifications-cont>a{
 font-size: 13px;
+text-decoration: none;
 } 
 .img-nav{
     width: 20px;
     height: 20px;
 }
+
 .nav-bar-inner{
     width: 60%;
     display: flex;
@@ -59,6 +62,32 @@ font-size: 13px;
 .logo{
     width:40px;
     height: 40px;
+}
+
+.notifications-bar{
+    position:absolute;
+    top:50px;
+    padding: 2rem;
+    right:400px;
+    
+    
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+    
+    width: 200px !important;
+    
+    
+    
+    
+    
+    
+    display: flex;
+    flex-direction: column;
+     align-items: center;
+    
+    color: #011627;
+
 }
 .menu-links{
     display: flex;
@@ -78,6 +107,21 @@ font-size: 13px;
     border-radius: 50%;
     height:50px
 
+}
+/* some added styling to the profile pic*/
+.online{
+    position: relative;
+}
+.online::after{
+    content: '';
+    width: 7px;
+    height: 7px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    background: #41db51;
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 
 .footer {
@@ -107,8 +151,6 @@ font-size: 13px;
       line-height: 10px;
       border-radius: 10px;
     }
-   
-
     @media screen and (max-width: 500px) {
         /* the header here should be set to only show it's icons */
         .footer{
@@ -125,4 +167,3 @@ font-size: 13px;
         }
     
       }
-    

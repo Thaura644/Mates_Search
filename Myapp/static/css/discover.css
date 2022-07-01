@@ -4,17 +4,28 @@
     font-family: 'poppins', sans-serif;
     box-sizing: border-box;
 }
-body  {
-    background: #d1bfbf;
+body{
+    background-color: #ccc;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    overflow-y: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+.body{
+    height: 100vh;
+    background-color: rgb(214, 210, 210);
 }
 
 
+/* 
 .logo{
     width: 160px;
     margin-right: 45px;
 
 }
-/* .nav-left, .nav-right{
+.nav-left, .nav-right{
     display: flex;
     align-items: center;
 }
@@ -27,7 +38,8 @@ body  {
     width: 28px;
     margin: 0 15px;
 }
-.nav-user-icon img{
+*/
+/* .nav-user-icon img{
     width: 40px;
     border-radius: 50%;
     cursor: pointer;
@@ -35,6 +47,7 @@ body  {
 .nav-user-icon{
     margin-left: 30px;
 } */
+/*
 .search-box{
     background:  #d1bfbf;
     width: 350px;
@@ -51,7 +64,7 @@ body  {
     padding: 10px;
     outline: none;
     border: 0;
-}
+}*/
 .online{
     position: relative;
 }
@@ -66,9 +79,10 @@ body  {
     top: 0;
     right: 0;
 }
+
 .container{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; 
     padding: 13px 5%;
 
 }
@@ -177,14 +191,14 @@ body  {
 .event a{
     font-size: 12px;
     text-decoration: none;
-    color: #1876f2;
+    color: #dd6595;
 }
 .left-event span{
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-    background: #1876f2;
+    background: #dd6595;
     color: #fff;
     font-size: 10px;
     padding: 4px 0;
@@ -226,34 +240,20 @@ body  {
 } */
 
 
-/* back up css */
-body{
+.nav-bar{
     display: flex;
-    flex-direction: column;
-    margin: 0;
-    overflow-y: hidden;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   align-items: center;
+   justify-content: center;
+ 
+height: 60px;
+padding: 5px;
+flex-direction: row;
+box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
 
 }
 nav{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: #1876f2;
-    padding: 5px 5%;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-.nav-bar{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 60px;
-    padding: 5px;
-    flex-direction: row;
-    box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
-
+    color: black;
+    background-color: #fff;
 }
 .discover-cont,.messages-cont,.activities-cont,.search-cont,.notifications-cont{
     display: flex;
@@ -266,13 +266,17 @@ nav{
 .nav-bar-inner{
     margin-top: 5px;
 }
-.discover-cont>p,.messages-cont>p,.activities-cont>p,.search-cont>p,.notifications-cont>p{
+.discover-cont>a,.messages-cont>a,.activities-cont>a,.search-cont>a,.notifications-cont>a{
 font-size: 13px;
+text-decoration: none;
+/* color:#dd6595; */
 } 
 .img-nav{
     width: 20px;
     height: 20px;
 }
+
+
 .nav-bar-inner{
     width: 60%;
     display: flex;
@@ -288,6 +292,32 @@ font-size: 13px;
 .logo{
     width:40px;
     height: 40px;
+}
+
+.notifications-bar{
+    position:absolute;
+    top:50px;
+    padding: 2rem;
+    right:400px;
+    
+    
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+    
+    width: 200px !important;
+    
+    
+    
+    
+    
+    
+    display: flex;
+    flex-direction: column;
+     align-items: center;
+    
+    color: #011627;
+
 }
 .menu-links{
     display: flex;
@@ -320,7 +350,7 @@ font-size: 13px;
     justify-content: flex;
     } 
      .footer a {
-      float: left;
+      float: left; 
       color: black;
       text-align: right;
       padding: 12px;
@@ -336,8 +366,6 @@ font-size: 13px;
       line-height: 10px;
       border-radius: 10px;
     }
-   
-
     @media screen and (max-width: 500px) {
         /* the header here should be set to only show it's icons */
         .footer{
@@ -354,4 +382,3 @@ font-size: 13px;
         }
     
       }
-    

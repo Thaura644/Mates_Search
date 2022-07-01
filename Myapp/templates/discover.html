@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% extends 'base.html'%}
 {% block content %} 
 
 
@@ -6,6 +7,7 @@
 
 <html lang="en">
 <head>
+    <link rel="icon" href="{% static 'images/logo.png' %}" />
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,10 +16,11 @@
 
     <!-- <link rel="stylesheet" href="{% static 'css/notifications.css' %}" type="text/css"> -->
 </head>
-<body ">
-    <div >
+<body>
+   
+    <!-- <div >
         <img src="{% static 'images/loader.gif' %}"/>
-    </div>
+    </div> -->
     <div >
     <!-- <nav>
         <div class="nav-left">
@@ -52,30 +55,33 @@
                 <div class="menu-links">
                 <div class="discover-cont">
             <img class="img-nav" src="{% static 'images/discover.png'%}"/>
-        <a href="{% url 'discover'%}">Discover</a>
+        <a href="{% url 'discover'%}"  style="color:#dd6595" >Discover</a>
                     </div>
                     <div class="messages-cont">
                             <img class="img-nav" src="{% static 'images/messages.png'%}"/>
-        <p>Messages</p>
+        <a  style="color: black;">Messages</a>
                     </div>
                     <div class="activities-cont">
                           <img class="img-nav" src="{% static 'images/activity.png'%}"/>
-                        <p>Activities</p>
+                        <a style="color: black;">Activities</a>
                     </div>
                     <div class="search-cont">
                         <img class="img-nav" src="{% static 'images/search.svg'%}"/>
                         
-        <p>Search</p>
+        <a style="color: black;">Search</a>
                     </div>
                     <div class="notifications-cont">
                     
                             <img class="img-nav" src="{% static 'images/notification.png'%}"/>
-                        <p>Notifications</p>
+                        <a href="{% url 'notifications'%}" style="color: black;">Notifications</a>
                     </div>
         
                 </div>
-                <div class="profile-cont">
+                <div class="profile-cont online">
                     <img class="img-nav" src="{% static 'images/profile.png'%}"/>
+                    <!-- <div class="nav-user-icon ">
+                        <img src="{ % static 'images/profile-pic.png' %}" >
+                    </div> -->
         
                 </div>
             </div>
@@ -84,6 +90,9 @@
         </nav>
 
     <!--  --------------- End of theeeee main nav --------------  -->
+    
+    <div class="body">
+    
     <div class="container">
         <!--  --------left-sidebar ----------- -->
         <div class="left-sidebar">
@@ -128,9 +137,9 @@
 
          <!--  --------subject to change::right-sidebar ----------- -->
         <div class="right-sidebar">
-            <div clas s="sidebar-title">
+            <div class="sidebar-title">
                 <h4>Event</h4>
-                <a href="#">See all</a>
+                <a href="#" style="color: #dd6595;">See all</a>
             </div>
             <div class="event">
                 <div class="left-event">
@@ -159,11 +168,12 @@
             </div>
         </div>
     </div>
+    </div>
     <!--Footer section-->
 	
 <section id="footer">
     <div class="footer">
-        <a href="#default" class="logo">Meet</a>
+        <a  href="{% url 'discover'%}"  class="logo" ><i style="color: #dd6595;">Meet</i></a>
         <div>
             <p> Copyright © 2022 Mate Inc, All rights reserved </p>
             </div>

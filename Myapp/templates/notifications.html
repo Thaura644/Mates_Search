@@ -7,23 +7,14 @@
 {% load static %} 
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="{% static 'images/logo.png' %}" />
    
     <title>{% block title %} Mates Search {% endblock %}</title>
     <link rel="stylesheet" href="{% static 'css/notifications.css' %}" type="text/css"><!--Stylesheet for home.html in static folder-->
-
-    
+   
 </head>
-<body onload="myFunction()">
-    <div id="loader">
-        <img src="{% static 'images/loader.gif' %}"/>
-    </div>
 
-<div style="display:none;" id="myDiv"  class="animate-bottom">
-    <nav>
+
 <div class="nav-bar">
     <div class="nav-bar-inner">
         <div class="animate-top">
@@ -34,44 +25,53 @@
         <div class="menu-links">
         <div class="discover-cont">
     <img class="img-nav" src="{% static 'images/discover.png'%}"/>
-<p href="{% templates 'discover.html'%}">Discover</p>
+<a href="{% url 'discover' %}" style="color: black;" >Discover</a>
             </div>
             <div class="messages-cont">
                     <img class="img-nav" src="{% static 'images/messages.png'%}"/>
-<p>Messages</p>
+<a style="color: black;">Messages</a>
             </div>
             <div class="activities-cont">
                   <img class="img-nav" src="{% static 'images/activity.png'%}"/>
-                <p>Activities</p>
+                <a style="color: black;">Activities</a>
             </div>
             <div class="search-cont">
                 <img class="img-nav" src="{% static 'images/search.svg'%}"/>
                 
-<p>Search</p>
+<a style="color: black;">Search</a>
             </div>
             <div class="notifications-cont">
             
-                    <img class="img-nav" src="{% static 'images/notification.png'%}"/>
-                <p>Notifications</p>
+                    <img class="img-nav" src="{% static 'images/notifications.png'%}"/>
+                <a style="color:#dd6595" href="{% url 'notifications' %}">Notifications</a>
             </div>
 
         </div>
-        <div class="profile-cont">
+        <div class="profile-cont online">
             <img class="img-nav" src="{% static 'images/profile.png'%}"/>
 
         </div>
     </div>
 
 </div>
-</nav>
-<!-- <div class="body">
 
-</div> -->
+
+<div class="body">
+    <div class="notifications-bar">
+
+        <p>no notifications</p>
+        </div>
+        
+    
+</div>
+
+
+
 <!--Footer section-->
 	
 <section id="footer">
     <div class="footer">
-        <a href="#default" class="logo">Meet</a>
+        <a href="{% url 'discover' %}" class="logo-footer"><i style="color:#dd6595">Meet</i></a>
         <div>
             <p> Copyright © 2022 Mate Inc, All rights reserved </p>
             </div>
