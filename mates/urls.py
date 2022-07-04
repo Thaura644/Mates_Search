@@ -11,4 +11,6 @@ urlpatterns = [
     path("register/", views.user_registration, name="register"),#handles user sign-up
     path("notifications/",views.notifications,name="notifications"),
     path("logout/", views.logout_user, name="logout"),
+    path("profile/", views.profile,name="profile"),
+    path("activate/:uidb64/:token",views.activate,name="activate")
 ]

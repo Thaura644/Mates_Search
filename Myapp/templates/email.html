@@ -1,0 +1,9 @@
+{% autoescape off %}
+Hi {{user.username}},
+Welcome to Mates Search.Please click the link below to activate your account,
+http://{{   domain   }}
+{% url 'activate' uidb64=uid token=token %}
+<img width="20px" height="20px" src="{%static% 'images/logo.png'}"/>
+<p style="font-size: 9px">Mates Search Inc</p>
+<p style="font-size: 9px">This is an auto generated email.Do not reply</p>
+{% endautoescape %}

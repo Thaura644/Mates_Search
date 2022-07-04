@@ -41,19 +41,19 @@
 </div>
         </ul>
     </nav>
-    <div class="alert-cont">
+   
     {% if messages %}<!--Start of notification block..Handles notifications from system to user-->
     {% for message in messages%}
-  
+    <div class="alert-cont">
     <div class="alert" role="alert">
     <strong>{{ message }}</strong> <!--notification itsles-->
    
   </div>
-
+</div>
     
     {% endfor %}
     {% endif %}
-  </div>
+ 
    
   <form class="login-form" method="POST">
     {% csrf_token %}

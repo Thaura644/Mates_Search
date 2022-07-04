@@ -53,12 +53,26 @@ font-size: 13px;
     width:40px;
     height: 40px;
 }
-
+.notifications-bar-inner{
+    color: black;
+    height: auto;
+}
+.notification-title{
+    color: black;
+}
+.notification-timesent{
+    color: black;
+}
+.notification-details{
+    color: black;
+}
 .notifications-bar{
     position:absolute;
     top:50px;
     padding: 2rem;
     right:400px;
+    height: auto;
+    min-height: 200px !important;
     
     
     background-color: white;
@@ -66,6 +80,7 @@ font-size: 13px;
     box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
     
     width: 200px !important;
+
     
     
     
@@ -126,11 +141,14 @@ font-size: 13px;
       line-height: 10px;
       border-radius: 10px;
     }
-    @media screen and (max-width: 500px) {
+    @media screen and (max-width: 768px) {
         /* the header here should be set to only show it's icons */
         .footer{
           float: none;
           display: none ;
+        }
+    .nav-bar-inner{
+    width: 90%;    
         }
         .footer a{
           float: none;
@@ -139,6 +157,9 @@ font-size: 13px;
         .footer p{
           float: none;
           display: none;
+        }
+        .menu-links{
+            display: none !important;
         }
     
       }

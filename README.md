@@ -37,11 +37,19 @@ clone this repo
 
 ```pip install -r requirements.txt```
 
-### 5.Start Django
+### 5.Installing requirements
+```python manage.py makemigrations```
+
+```python manage.py makemigrations mates```
+
+```python manage.py migrate```
+
+
+### 6.Start Django
 
 ```python manage.py runserver```
 
-### 6.Open your browser on
+### 7.Open your browser on
 
 ```http://127.0.0.1:8000```
 
@@ -61,4 +69,4 @@ Note these changes on your settings.py
         'PORT': '5433', }
 }
 ```
-
+NB: If you are setting up the second time with new model CustomUser Delete All migrations first then run the commands on step 5

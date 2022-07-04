@@ -142,17 +142,7 @@
   </style>
     
  <main>
-  {% if messages %}<!--Start of notification block..Handles notifications from system to user-->
-  {% for message in messages%}
-  <div class="alert alert-warning alert-dismissible fade show" role="alert">
-  <strong>{{ message }}</strong> <!--notification itsles-->
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button>
-</div>
-  
-  {% endfor %}
-  {% endif %}<!--end of notification block-->
+
   {% block scripts %}<!--Start of the scripts block,If you want to add javascript directly instead from .js file in static-->
   {% endblock scripts %}<!---->
     {% block content %}

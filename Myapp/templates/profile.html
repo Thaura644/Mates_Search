@@ -1,0 +1,210 @@
+{% extends 'base.html' %}
+{% block content %} <!--Where everything begins - similar to start of a program-->
+
+
+
+{% load static %} 
+<head>
+    <link rel="icon" href="{% static 'images/logo.png' %}"/>
+    
+    <title>{% block title %}Mates Search | Profile{% endblock %}</title><!--Title of the base file-->
+
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}" type="text/css">
+
+</head>
+<body>
+    <div class="nav-bar">
+        <div class="nav-bar-inner">
+            <div class="animate-top">
+            <div class="logo-img">
+                <img class="logo"src="{% static 'images/logo.png'%}">
+            </div>
+            </div>
+            <div class="menu-links">
+            <div class="discover-cont">
+        <img class="img-nav" src="{% static 'images/discover.png'%}"/>
+    <p>Discover</p>
+                </div>
+                <div class="messages-cont">
+                        <img class="img-nav" src="{% static 'images/messages.png'%}"/>
+    <p>Messages</p>
+                </div>
+                <div class="activities-cont">
+                      <img class="img-nav" src="{% static 'images/activity.png'%}"/>
+                    <p>Activities</p>
+                </div>
+                <div class="search-cont">
+                    <img class="img-nav" src="{% static 'images/search.svg'%}"/>
+                    
+    <p>Search</p>
+                </div>
+                <div class="notifications-cont">
+                
+                        <img class="img-nav" src="{% static 'images/notification.png'%}"/>
+                    <p>Notifications</p>
+                </div>
+    
+            </div>
+            <div class="profile-cont">
+                <img class="img-nav" src="{% static 'images/profile.png'%}"/>
+    
+            </div>
+        </div>
+    
+    </div>
+    
+<div class="profile-cont23">
+    <div class="profile-cont-inner">
+        <div class="profile-cont-inner2">
+    <div class="profile-cont1">
+        <div class="profile-image">
+            <img class="profile-img" src="{% static 'images/dog.jpg'%}"/>
+
+
+        </div>
+        <div class="profile-change-pwd">
+            <img class="log-out-x" src="{%static 'images/key.png'%}"/>
+          
+<p>Change Password</p>
+        </div>
+        <div class="profile-completion">
+            <p class="profile-completion-text">PROFILE COMPLETION</p>
+            <div class="profile-complete">
+                <div class="profile-width">
+
+                </div>
+            </div>
+            <p class="profile-completion-perc">75%</p>
+        </div>
+    </div>
+    <div class="profile-owner-details">
+        <div class="profile-share-btn">
+            <img class="log-out-x" src="{%static 'images/link.png'%}"/>
+            <p>Share Profile</p>
+
+        </div>
+        <div class="profile-name">
+            
+            <p>@{{user.username}}</p>
+            <img class="profile-mini-img" src="{%static 'images/edit.png'%}"/>
+               
+        </div>
+        <div class="profile-logout-btn">
+            <img class="log-out-x" src="{% static 'images/log-out.png'%}"/>
+            <a type="button" class="btn btn-danger" href="{% url 'logout' %}">Log Out</a>
+                    
+        </div>
+
+    </div>
+    </div>
+    <div class="profile-personal-details">
+        <div class="profile-personal-cont1">
+            <div class="location-cont">
+                <img class="profile-mini-imgs" src="{%static 'images/location.png'%}"/>
+                <p>location</p>
+            </div>
+            <div class="email-cont">
+                <img class="profile-mini-imgs" src="{%static 'images/mail.png'%}"/>
+               
+                <p>{{user.email}}</p>
+            </div>
+            <div class="height-cont">
+                <img class="profile-mini-imgs" src="{%static 'images/height.png'%}"/>
+               
+                <p>height</p></div>
+            <div class="university-cont">
+                <img class="profile-mini-imgs" src="{%static 'images/dob.png'%}"/>
+               
+                <p>DOB</p></div>
+
+        </div>
+        <div class="profile-personal-cont2">
+            <div class="location-cont">
+                <img class="profile-mini-imgs" src="{%static 'images/phone.png'%}"/>
+               
+                <p>phone number</p>
+            </div>
+            
+            <div class="height-cont">
+                <img class="profile-mini-imgs" src="{%static 'images/bino.png'%}"/>
+               
+                <p>Status</p></div>
+            <div class="university-cont">
+                <img class="profile-mini-imgs" src="{%static 'images/university.png'%}"/>
+               
+                <p>{{user.university}}</p></div>
+                <div class="university-cont">
+                    <img class="profile-mini-imgs" src="{%static 'images/profile3.png'%}"/>
+                   
+                    <p>profile-views</p></div>
+        </div>
+    </div>
+  <div class="profile-nav-cont">
+  
+    <div class="profile-nav-inner">
+        <p>Bio</p>
+    </div>
+  
+
+
+  </div>
+</div>
+
+</div>
+
+<div class="profile-form">
+    <div class="profile-form-inner1">
+        <div class="interest-div">
+            <div class="interest-div-cont1">
+            <p class="interest-div-cont1-text">Type the interests that you have</p>
+            <p class="interest-under">*Increase your chances to be matched</p>
+            <input placeholder="Cooking,surfing.."class="interest-intput"/>
+            </div>
+            <div class="interest-div-cont2">
+               
+           
+            </div>
+            
+        </div>
+    </div>
+    <div class="profile-form-inner">
+        <div class="interest-div">
+            <div class="interest-div-cont1">
+            <p  class="cont-title">About you</p>
+            <textarea placeholder="I'm John doe an undergrad at .... and am searching for.."class="about-you-input"></textarea>
+            </div>
+        <div class="interest-div-cont5">
+            
+        </div>
+            
+        </div>
+    </div>
+ 
+    <div class="profile-form-inner2">
+        <div class="interest-div">
+            <div class="interest-div-cont1">
+            <p class="cont-title">Language Skills</p>
+            </div>
+        <div class="interest-div-cont3">
+            <button type="submit">+ Add Languages</button>
+        </div>
+            
+        </div>
+        
+</div>
+<div class="interest-div-cont2">
+    <button type="submit">Update Bio</button>
+</div>
+</div>
+<section id="footer">
+    <div class="footer">
+        <a href="{% url 'home'%}" class="logo-footer"><i style="color:#dd6595">Meet</i></a>
+        <div>
+            <p> Copyright © 2022 Mate Inc, All rights reserved </p>
+            </div>
+       
+    </div>
+</section>
+</body>
+
+{% endblock %}

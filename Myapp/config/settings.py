@@ -114,6 +114,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
+AUTH_USER_MODEL = 'mates.CustomUser'
 
 LANGUAGE_CODE = 'en-us'
 
@@ -128,7 +129,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"), )
-
+EMAIL_USE_TLS =True
+EMAIL_HOST ='stmp.gmail.com'
+EMAIL_HOST_USER = 'parishniclaus@gmail.com'
+EMAIL_HOST_PASSWAORD = 'daud+2002'
+EMAIL_PORT=587
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field

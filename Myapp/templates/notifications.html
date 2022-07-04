@@ -57,8 +57,11 @@
 
 <div class="body">
     <div class="notifications-bar">
+        <div class="notifications-bar-inner">
 
-        <p>no notifications</p>
+        </div>
+
+       
         </div>
         
     
@@ -67,7 +70,7 @@
 
 </div>
 <!--Footer section-->
-	
+<!--	
 <section id="footer">
     <div class="footer">
         <a href="{% url 'home'%}" class="logo-footer"><i style="color:#dd6595">Meet</i></a>
@@ -77,9 +80,36 @@
        
     </div>
 </section>
-	
+-->
 	<!-- End of footer section--> 
 </div>
+<script>
+    const notificationdiv = document.getElementsByClassName("notifications-bar-inner");
+    const notificationder = [{title:'hello',timeSent:"23:08",details:"Welcome to mates Search"}];
+    const createnotification = (notification) => {
+        if(notification){
+            return `<div class="notification-cont">
+                <p class="notification-title">${notification.title}</p>
+                <p class="notification-tiimesent">${notification.timeSent}</p>
+                <p class="notification-details">${notification.details}</p>
+                </div>`
+        }
+        else{
+            return ` <p>no notifications</p>`
+        }
+
+    };
+    const displayNotification = ()=>{
+        const notifications = notificationder.map(notification=>createnotification(notification)).join('')
+        notificationdiv.innerHTML = notifications
+       
+
+ 
+    };
+    displayNotification()
+    console.log(notificationdiv.innerHTML)
+
+</script>
 </body>
 {% endblock %}
 </html>
