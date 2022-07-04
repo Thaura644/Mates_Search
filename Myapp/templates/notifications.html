@@ -5,6 +5,7 @@
 
 
 {% load static %} 
+<html lang="en">
 <head>
     <link rel="icon" href="{% static 'images/logo.png' %}" />
    
@@ -12,13 +13,8 @@
     <link rel="stylesheet" href="{% static 'css/notifications.css' %}" type="text/css"><!--Stylesheet for home.html in static folder-->
    
 </head>
-<body onload="myFunction()">
-    <div id="loader">
-        <img src="{% static 'images/loader.gif' %}"/>
-    </div>
 
-<div style="display:none;" id="myDiv"  class="animate-bottom">
-    
+<nav>
 <div class="nav-bar">
     <div class="nav-bar-inner">
         <div class="animate-top">
@@ -29,49 +25,60 @@
         <div class="menu-links">
         <div class="discover-cont">
     <img class="img-nav" src="{% static 'images/discover.png'%}"/>
-<p>Discover</p>
+<a href="{% url 'discover' %}" style="color: black;" >Discover</a>
             </div>
             <div class="messages-cont">
                     <img class="img-nav" src="{% static 'images/messages.png'%}"/>
-<p>Messages</p>
+<a style="color: black;">Messages</a>
             </div>
             <div class="activities-cont">
                   <img class="img-nav" src="{% static 'images/activity.png'%}"/>
-                <p>Activities</p>
+                <a style="color: black;">Activities</a>
             </div>
             <div class="search-cont">
                 <img class="img-nav" src="{% static 'images/search.svg'%}"/>
                 
-<p>Search</p>
+<a style="color: black;">Search</a>
             </div>
             <div class="notifications-cont">
             
                     <img class="img-nav" src="{% static 'images/notification.png'%}"/>
-                <p>Notifications</p>
+                <a style="color:#dd6595" href="{% url 'notifications' %}">Notifications</a>
             </div>
 
         </div>
-        <div class="profile-cont">
+        <div class="profile-cont online">
             <img class="img-nav" src="{% static 'images/profile.png'%}"/>
 
         </div>
     </div>
 
 </div>
-<div class="body">
+</nav>
 
+
+<div class="body">
+    <div class="notifications-bar">
+
+        <p>no notifications</p>
+        </div>
+        
+    
 </div>
+
+
+
 <!--Footer section-->
 	
-<section id="footer">
+<!-- <section id="footer">
     <div class="footer">
-        <a href="#default" class="logo">Meet</a>
+        <a href="{% url 'discover' %}" class="logo-footer"><i style="color:#dd6595">Meet</i></a>
         <div>
             <p> Copyright © 2022 Mate Inc, All rights reserved </p>
             </div>
        
     </div>
-</section>
+</section> -->
 	
 	<!-- End of footer section--> 
 </div>
