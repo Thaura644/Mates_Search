@@ -1,4 +1,4 @@
-profile-pic.png
+
 shortcut-1.png
 shortcut-2.png
 shortcut-3.png

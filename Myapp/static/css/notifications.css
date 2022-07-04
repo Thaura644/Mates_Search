@@ -9,6 +9,13 @@ body{
 nav{
     color: white;
 }
+nav{
+    color: black;
+    background-color: #fff;
+    padding: 12px 2%;
+    top: 0;
+    z-index: 100;
+}
 *{
     margin: 0;
     padding: 0;
@@ -48,7 +55,7 @@ text-decoration: none;
 }
 
 .nav-bar-inner{
-    width: 60%;
+    width: 70%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;

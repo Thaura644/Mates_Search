@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 body{
-    background-color: #ccc;
+    background-color: #dd6595;
     display: flex;
     flex-direction: column;
     margin: 0;
@@ -83,32 +83,37 @@ body{
 .container{
     display: flex;
     justify-content: space-between; 
-    padding: 13px 5%;
+    padding: 10px 4%;
+    /* -moz-box-shadow:    -3px 0 5px 0 #555;
+    -webkit-box-shadow: -3px 0 5px 0 #555; */
+    box-shadow:         -3px 0 5px 0 #555;
 
 }
 .left-sidebar{
-    background: #cdbffa;
+    background: rgb(242, 247, 243);
     flex-basis: 25%;
     position: sticky;
     top:70px;
     align-self: flex-start;
-    /* height: 100vh; */
+    
+    
 }
  .right-sidebar{
-    background: #cdbffa;
+    background: rgb(173, 235, 148);
     flex-basis: 25%;
     position: sticky;
     top:70px;
     align-self: flex-start;
-    background: #fff;
+    background: rgba(255, 251, 251, 0.349);
     padding: 20px;
     border-radius: 4px;
     color: #626262; 
 
+
 }
 
 .main-content{
-    flex-basis: 67% ;
+    flex-basis: 47% ;
 }
 .imp-links a, .shortcut-links a{
     text-decoration: none;
@@ -242,18 +247,20 @@ body{
 
 .nav-bar{
     display: flex;
-   align-items: center;
-   justify-content: center;
- 
-height: 60px;
-padding: 5px;
-flex-direction: row;
-box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
-
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    padding: 5px;
+    flex-direction: row;
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+    
 }
 nav{
     color: black;
     background-color: #fff;
+    padding: 12px 2%;
+    top: 0;
+    z-index: 100;
 }
 .discover-cont,.messages-cont,.activities-cont,.search-cont,.notifications-cont{
     display: flex;
@@ -278,7 +285,7 @@ text-decoration: none;
 
 
 .nav-bar-inner{
-    width: 60%;
+    width: 70%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
