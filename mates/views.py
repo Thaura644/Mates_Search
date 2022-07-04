@@ -5,6 +5,7 @@ from .forms import RegisterUserForm,ProfileForm
 from .models import Notifications
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
+from django.http import HttpResponse
 
 def user_login(request):
     if request.method == "POST":
@@ -42,7 +43,12 @@ def user_registration(request):
     context = {}
     return render(request,'sign-up.html',)
 
+
 @login_required
+def discover(request):
+    context = {}
+    return render(request, 'discover.html', context)
+
 def notifications(request):
     notifications = []
     user_id = request.user.id
