@@ -10,8 +10,6 @@ urlpatterns = [
     #path("account/profile/:id"),#handles search for user in system
 
     path("register/", views.user_registration, name="register"),#handles user sign-up
-    path("notifications/",views.notifications,name="notifications")
-]
-    path("register/", views.user_registration, name="register")#handles user sign-up
-    
+    path("notifications/",views.notifications,name="notifications"),
+    path("logout/", views.logout_user, name="logout"),
 ]
