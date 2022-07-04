@@ -53,3 +53,20 @@ if on windows use the down below
 
 ```http://127.0.0.1:8000```
 
+### As per assignment we are using Xampp
+
+Make sure mysqlclient is installed
+
+Note these changes on your settings.py 
+
+```DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql', 
+        'NAME': 'Mates_Search',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': '127.0.0.1',
+        'PORT': '5433', }
+}
+```
+
