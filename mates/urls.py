@@ -12,5 +12,7 @@ urlpatterns = [
     path("notifications/",views.notifications,name="notifications"),
     path("logout/", views.logout_user, name="logout"),
     path("profile/", views.profile,name="profile"),
-    path("activate/:uidb64/:token",views.activate,name="activate")
+    path("activate/:uidb64/:token",views.activate,name="activate"),
+    path("notifier/",views.notifications_data,name="notifications_data"),
+    path("profile/<slug:user_name>",views.userprofile,name="userprofile")
 ]

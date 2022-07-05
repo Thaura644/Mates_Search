@@ -15,37 +15,40 @@
 <body>
     <div class="nav-bar">
         <div class="nav-bar-inner">
-            <div class="animate-top">
+            
             <div class="logo-img">
                 <img class="logo"src="{% static 'images/logo.png'%}">
-            </div>
+            
             </div>
             <div class="menu-links">
             <div class="discover-cont">
         <img class="img-nav" src="{% static 'images/discover.png'%}"/>
-    <p>Discover</p>
+        <a href="{%url 'notifications'%}">Discover</a>
+               
                 </div>
                 <div class="messages-cont">
                         <img class="img-nav" src="{% static 'images/messages.png'%}"/>
-    <p>Messages</p>
+                        <a href="{%url 'notifications'%}">Messages</a>
+               
                 </div>
-                <div class="activities-cont">
+                <!--<div class="activities-cont">
                       <img class="img-nav" src="{% static 'images/activity.png'%}"/>
                     <p>Activities</p>
-                </div>
+                </div>-->
                 <div class="search-cont">
                     <img class="img-nav" src="{% static 'images/search.svg'%}"/>
                     
-    <p>Search</p>
+                    <a href="{%url 'notifications'%}">Search</a>
+               
                 </div>
                 <div class="notifications-cont">
                 
                         <img class="img-nav" src="{% static 'images/notification.png'%}"/>
-                    <p>Notifications</p>
+                    <a href="{%url 'notifications'%}">Notifications</a>
                 </div>
     
             </div>
-            <div class="profile-cont">
+            <div  class="profile-cont">
                 <img class="img-nav" src="{% static 'images/profile.png'%}"/>
     
             </div>
@@ -139,7 +142,11 @@
                     <p>profile-views</p></div>
         </div>
     </div>
-  <div class="profile-nav-cont">
+
+</div>
+
+</div>
+<div class="profile-nav-cont">
   
     <div class="profile-nav-inner">
         <p>Bio</p>
@@ -148,17 +155,14 @@
 
 
   </div>
-</div>
-
-</div>
-
 <div class="profile-form">
     <div class="profile-form-inner1">
         <div class="interest-div">
             <div class="interest-div-cont1">
+                <p class="interest-under">*Increase your chances to be matched</p>
+            
             <p class="interest-div-cont1-text">Type the interests that you have</p>
-            <p class="interest-under">*Increase your chances to be matched</p>
-            <input placeholder="Cooking,surfing.."class="interest-intput"/>
+           <input placeholder="Cooking,surfing.."class="interest-intput"/>
             </div>
             <div class="interest-div-cont2">
                

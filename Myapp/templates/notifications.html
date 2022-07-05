@@ -16,37 +16,40 @@
 
 <div class="nav-bar">
     <div class="nav-bar-inner">
-        <div class="animate-top">
+        
         <div class="logo-img">
             <img class="logo"src="{% static 'images/logo.png'%}">
         </div>
-        </div>
+        
         <div class="menu-links">
         <div class="discover-cont">
     <img class="img-nav" src="{% static 'images/discover.png'%}"/>
-<p>Discover</p>
+    <a href="{%url 'notifications'%}">Discover</a>
+              
             </div>
             <div class="messages-cont">
                     <img class="img-nav" src="{% static 'images/messages.png'%}"/>
-<p>Messages</p>
+                    <a href="{%url 'notifications'%}">Messages</a>
+              
             </div>
-            <div class="activities-cont">
+            <!--<div class="activities-cont">
                   <img class="img-nav" src="{% static 'images/activity.png'%}"/>
                 <p>Activities</p>
-            </div>
+            </div>-->
             <div class="search-cont">
                 <img class="img-nav" src="{% static 'images/search.svg'%}"/>
                 
-<p>Search</p>
+                <a href="{%url 'notifications'%}">Search</a>
+              
             </div>
             <div class="notifications-cont">
             
                     <img class="img-nav" src="{% static 'images/notifications2.png'%}"/>
-                <p style="color:#dd6595">Notifications</p>
-            </div>
+                    <a href="{%url 'notifications'%}">Notifications</a>
+                </div>
 
         </div>
-        <div class="profile-cont">
+        <div onclick="changeLocation()" class="profile-cont">
             <img class="img-nav" src="{% static 'images/profile.png'%}"/>
 
         </div>
@@ -56,13 +59,13 @@
 
 
 <div class="body">
-    <div class="notifications-bar">
-        <div class="notifications-bar-inner">
+    <div class="notifications-bar-outer">
+        <p class="notifications-title-outer">Notifications</p>
+    <div id="notificationsbarinner" class="notifications-bar-inner">
 
-        </div>
-
-       
-        </div>
+    </div>
+  
+</div>
         
     
 </div>
@@ -83,16 +86,31 @@
 -->
 	<!-- End of footer section--> 
 </div>
+<script src="https://momentjs.com/downloads/moment.min.js"></script>
+
 <script>
-    const notificationdiv = document.getElementsByClassName("notifications-bar-inner");
-    const notificationder = [{title:'hello',timeSent:"23:08",details:"Welcome to mates Search"}];
+
+    const notificationdiv = document.getElementById("notificationsbarinner");
+   
+   
     const createnotification = (notification) => {
+        
         if(notification){
             return `<div class="notification-cont">
-                <p class="notification-title">${notification.title}</p>
-                <p class="notification-tiimesent">${notification.timeSent}</p>
-                <p class="notification-details">${notification.details}</p>
-                </div>`
+                <div class="notification-dot">
+                    <img style="width:15px;height:15px"src={%static 'images/tick.png'%}/>
+                    </div>
+ 
+             <p class="notification-details">${notification.details}</p>
+             <div class="notification-time">
+            <p class="notification-timesent">${moment(notification.date).format("MMM Do YY")}</p>
+             <p class="notification-timesent">${notification.sentTime}</p>
+
+             </div>
+             </div>
+           
+             <div class="hr-line"></div>
+             `
         }
         else{
             return ` <p>no notifications</p>`
@@ -100,15 +118,26 @@
 
     };
     const displayNotification = ()=>{
-        const notifications = notificationder.map(notification=>createnotification(notification)).join('')
+        fetch('http://127.0.0.1:8000/app/notifier/')
+  .then(response => response.json())
+  .then(data =>{
+    console.log(data)
+    const notifications = data.map(notification=>createnotification(notification)).join('')
+        
         notificationdiv.innerHTML = notifications
        
+  }).catch(err=>console.log("an error occured"+err));
+
+      
 
  
     };
     displayNotification()
     console.log(notificationdiv.innerHTML)
 
+function changeLocation(){
+    window.location ="/app/profile/"
+}
 </script>
 </body>
 {% endblock %}

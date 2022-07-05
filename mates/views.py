@@ -11,6 +11,7 @@ from django.utils.encoding import force_bytes,force_str
 from django.utils.http  import urlsafe_base64_encode,urlsafe_base64_decode
 from django.template.loader import render_to_string
 from django.core.mail import EmailMessage
+import datetime
 from .token import account_activation_token
 def user_login(request):
     if request.method == "POST":
@@ -37,6 +38,7 @@ def user_registration(request):
         
         if form.is_valid():
             """ 
+            #gmail doesn't support this so.....
             user = form.save(commit=False)
             user.is_active=False
             user.save()#saves user in memory not database
@@ -56,19 +58,33 @@ def user_registration(request):
             messages.success(request,"Activation link has been sent to your email")
             return redirect('register') 
             """
-            user = form.save()
+            form.save()
             username = form.cleaned_data['username']
             password = form.cleaned_data['password1']
             post_email = form.cleaned_data['email']
-            user.save()
+            post_gender = form.cleaned_data['gender']
             user = authenticate(username=username,password=password)
-            if user is not None and CustomUser.objects.filter(email=post_email).exists()==False:
+            if user is not None:
                 login(request, user)
                 Notifications.objects.create(user_id=request.user.id,title="Welcome to Mates Search",details="Stop the search and find your soul mate at an instant")
                 messages.success(request,"Your account has successfully been created")
+                current_date= datetime.date.today()
+                current_time=  datetime.now().time() 
+                if post_gender == "male":
+                    Users =CustomUser.objects.filter(gender="female")
+                    for user in Users:
+                        notify=username+",just joined.Would you love to be matched?"
+                        Notifications.objects.create(user_id=user.id,details=notify,date=current_date,sentTime=current_time)
+                elif post_gender == "female":
+                    Users = CustomUser.objects.filter(gender="male")
+                    for user in Users:
+                        notify=username+",just joined.Would you love to be matched?"
+                        Notifications.objects.create(user_id=user.id,details=notify,date=current_date,sentTime=current_time)
+                
+
                 return redirect('login')
             else:
-                messages.success(request,"Account already exists")
+                messages.success(request,"Account associated with email already exists")
                 return redirect('register')
 
             
@@ -101,17 +117,26 @@ def activate(request,uidb64,token):
 
 @login_required
 def notifications(request):
+    return render(request, 'notifications.html')
+@login_required
+def notifications_data(request):
     notifications_data = []
     user_id = request.user.id
-    notifications = Notifications.objects.select_related().filter(user_id=user_id)
-    for notification in notifications:
+    notifications = Notifications.objects.filter(user_id=user_id).values()
+    
+    """for notification in notifications:
         data = {"title":notification.title,"timeSent":notification.sentTime,"details":notification.details}
-        notifications_data.append(data)
-    response = JsonResponse(notifications_data,content_type='application/json',safe=False)
-    print(notifications_data)
-    return render(request, 'notifications.html',{'notificationsJSON': response})
-
+        notifications_data.append(data)"""
+    notifications1 = list(notifications)
+    print(notifications1)
+    return JsonResponse(notifications1,safe=False)
+    
 @login_required     
 def profile(request):
+     return render(request,'profile.html')
+
+@login_required
+def userprofile(request,user_name):
     return render(request,'profile.html')
+
     

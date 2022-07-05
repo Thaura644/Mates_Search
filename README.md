@@ -69,4 +69,5 @@ Note these changes on your settings.py
         'PORT': '5433', }
 }
 ```
+
 NB: If you are setting up the second time with new model CustomUser Delete All migrations first then run the commands on step 5

@@ -43,7 +43,10 @@ box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8p
     justify-content: center;
     padding: 5px;
 }
-.discover-cont>p,.messages-cont>p,.activities-cont>p,.search-cont>p,.notifications-cont>p{
+.discover-cont>a,.messages-cont>a,.activities-cont>a,.search-cont>a,.notifications-cont>a{
+    text-decoration: none;
+    color: black;
+    margin-top: 3px;
     font-size: 13px;
     } 
 .img-nav{
@@ -53,6 +56,7 @@ box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8p
 
 
 .logo{
+    margin: auto;
     width:40px;
     height: 40px;
 }
@@ -77,7 +81,7 @@ box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8p
     display: flex;
     flex-direction: column;
     width: 500px;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     height: auto;
 
@@ -231,7 +235,7 @@ box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8p
 .profile-completion-text{
     font-size: 9px!important;
 
-    color: black;
+    color: black !important;
     font-weight: bold;
 }
 .profile-completion-perc{
@@ -241,21 +245,22 @@ box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8p
     display: flex;
     margin: auto;
     flex-direction: column;
-    width: 100%;
+    margin: auto;
+    width: 60%;
 }
 .profile-image{
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
     display: flex;
     align-items: center;
     justify-content: center;
-    width:80px;
-    border-radius: 50%;
-    height:80px
+    width:150px;
+    border-radius: 50px;
+    height:150px
 }
 .profile-img{
-    width: 80px;
-    border-radius: 50%;
-    height: 80px;
+    width: 140px;
+    border-radius: 50px;
+    height: 140px;
 
 }
 .profile-change-pwd{
@@ -268,9 +273,10 @@ box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8p
     font-size: 15px;
     color: rgb(87, 87, 87);
     font-weight: bold;
+
 }
 .profile-nav-inner{
-    margin-left: 10px;
+    margin-left: 25px;
     font-size: 15px;
     cursor: pointer;
     display: flex;
@@ -399,6 +405,7 @@ box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8p
 }
 .location-cont>p,.email-cont>p,.height-cont>p,.university-cont>p,.location-cont>p,.email-cont>p,.height-cont>p{
     margin-left: 10px;
+    font-size: 13px;
 
 }
 .location-cont,.email-cont,.height-cont,.university-cont,.location-cont,.email-cont,.height-cont{
@@ -461,6 +468,8 @@ box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8p
         }
            .menu-links{
             display: none !important;
+        }.profile-cont-inner{
+            width: 100%;
         }
     
       }

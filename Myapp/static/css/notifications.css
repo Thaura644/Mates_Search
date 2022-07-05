@@ -2,7 +2,8 @@ body{
     display: flex;
     flex-direction: column;
     margin: 0;
-    overflow-y: hidden;
+    overflow: hidden;
+  
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
 }
@@ -29,9 +30,21 @@ box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8p
 .nav-bar-inner{
     margin-top: 5px;
 }
-.discover-cont>p,.messages-cont>p,.activities-cont>p,.search-cont>p,.notifications-cont>p{
+.discover-cont>a,.messages-cont>a,.activities-cont>a,.search-cont>a{
 font-size: 13px;
+margin-top: 3px;
+text-decoration: none;
+color: black;
+
 } 
+.notifications-cont>a{
+    color: #dd95dd;
+    font-size: 13px;
+margin-top: 3px;
+text-decoration: none;
+
+}
+
 .img-nav{
     width: 20px;
     height: 20px;
@@ -50,21 +63,70 @@ font-size: 13px;
     width: 70%;
 }
 .logo{
+    margin: auto;
     width:40px;
     height: 40px;
 }
+.notification-dot{
+    width:15px;
+height: 15px;
+display: flex;
+align-items: center;
+justify-content: center;
+
+margin-left: 14px;
+}
 .notifications-bar-inner{
+    width: 100%;
     color: black;
-    height: auto;
+    padding: 5px;
+    justify-content: center;
+    overflow-y: scroll;
+    height: 100%;
+   
+}
+.notifications-bar-outer{
+    background-color: white;
+    width: 60%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction:column ;
+    min-height: 400px;
+    align-items: flex-start;
+    padding: 10px;
+
+
+   height: auto;
+}.notifications-title-outer{
+    font-weight: 500;
 }
 .notification-title{
     color: black;
+    font-weight: bold;
 }
+.notification-time{
+    display: flex;
+    flex-direction: row;
+    width: 200px;
+    justify-content: space-evenly;
+}
+.hr-line{
+    width: 100%;
+    height: 2px;}
 .notification-timesent{
-    color: black;
+   
+  
+    font-size: 10px;
+    color: gray;
+    font-weight: 600;
+    
 }
 .notification-details{
     color: black;
+    
+    font-weight: 500;
+    font-size: 13px;
+
 }
 .notifications-bar{
     position:absolute;
@@ -79,7 +141,7 @@ font-size: 13px;
     border-radius: 5px;
     box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
     
-    width: 200px !important;
+    width:400px !important;
 
     
     
@@ -101,11 +163,16 @@ font-size: 13px;
 }
 .body{
     height: 100vh;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  
     background-color: rgb(214, 210, 210);
 }
 .profile-cont{
     border: 1px solid gray;
     display: flex;
+    cursor: pointer;
     align-items: center;
     justify-content: center;
     width:50px;
@@ -114,6 +181,22 @@ font-size: 13px;
 
 }
 
+.notification-cont{
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;  display: flex;
+padding: 3px;
+    flex-direction:row ;
+    border-radius: 5px;
+    width: auto;
+    cursor: pointer;
+    height: 40px;
+    margin-top: 3px;
+    justify-content: space-between;
+    align-items: center;
+}
+.notification-cont:hover{
+
+   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
 .footer {
     position: fixed;
     left: 0;
@@ -147,9 +230,7 @@ font-size: 13px;
           float: none;
           display: none ;
         }
-    .nav-bar-inner{
-    width: 90%;    
-        }
+   
         .footer a{
           float: none;
           display: none;
@@ -161,5 +242,14 @@ font-size: 13px;
         .menu-links{
             display: none !important;
         }
-    
+        .nav-bar-inner{
+            width: 90%;
+
+        }
+        .notifications-bar{
+            right: 100px;
+        }
+        .notifications-bar-outer{
+            width: 90%;
+        }
       }
