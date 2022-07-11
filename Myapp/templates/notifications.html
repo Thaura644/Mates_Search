@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-
+{% extends 'base.html'%}
 {% block content %} <!--Where everything begins - similar to start of a program-->
 
 
@@ -94,22 +94,36 @@
    
    
     const createnotification = (notification) => {
+        var today = new Date();
         
-        if(notification){
-            return `<div class="notification-cont">
+        var date_tf = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+        console.log(notification.sentTime.substr(0,2))
+        
+        if(notification.length!=0){
+        let timelocale = "";
+        if(notification.sentTime.substr(0,2)<12){
+            timelocale = "AM";
+        }else{
+            timelocale = "PM";
+        }
+            return `
+            <div class="animatebottom1">
+            <div class="notification-cont">
+              
                 <div class="notification-dot">
-                    <img style="width:15px;height:15px"src={%static 'images/tick.png'%}/>
+                    <img style="width:20px;height:20px"src={%static 'images/tick.png'%}/>
                     </div>
  
              <p class="notification-details">${notification.details}</p>
              <div class="notification-time">
             <p class="notification-timesent">${moment(notification.date).format("MMM Do YY")}</p>
-             <p class="notification-timesent">${notification.sentTime}</p>
+             <p class="notification-timesent">${notification.sentTime.substr(0,5)+timelocale}</p>
 
              </div>
              </div>
-           
+          
              <div class="hr-line"></div>
+            </div>
              `
         }
         else{

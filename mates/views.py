@@ -1,8 +1,9 @@
+from code import interact
 from django.shortcuts import render,redirect
 from django.contrib.auth import authenticate,login,logout
 from django.contrib import messages
 from .forms import RegisterUserForm,ProfileForm
-from .models import Notifications,CustomUser
+from .models import Notifications,CustomUser,Userprofile
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
 from django.http import HttpResponseRedirect
@@ -12,6 +13,7 @@ from django.utils.http  import urlsafe_base64_encode,urlsafe_base64_decode
 from django.template.loader import render_to_string
 from django.core.mail import EmailMessage
 import datetime
+from datetime import datetime as dt
 from .token import account_activation_token
 def user_login(request):
     if request.method == "POST":
@@ -21,7 +23,7 @@ def user_login(request):
         if user is not None:
             login(request,user)
             messages.success(request,"Login Successfully")   
-            return redirect('notifications') 
+            return redirect('profile') 
         else:
             messages.success(request,"Incorrect username or password")   
             return redirect('login') 
@@ -66,10 +68,11 @@ def user_registration(request):
             user = authenticate(username=username,password=password)
             if user is not None:
                 login(request, user)
-                Notifications.objects.create(user_id=request.user.id,title="Welcome to Mates Search",details="Stop the search and find your soul mate at an instant")
+                Notifications.objects.create(user_id=request.user.id,title="Welcome to Mates Search",details="Welcome to Mates Search,@"+username+".")
+                Userprofile.objects.create(user_id=request.user.id,age=0,about='** No about **',height=0,interests=['** No interests **'],status="Single",phone_number=00,location="** No Location **",languages=['** No language(s) **'])
                 messages.success(request,"Your account has successfully been created")
                 current_date= datetime.date.today()
-                current_time=  datetime.now().time() 
+                current_time=   dt.now().strftime("%H:%M:%S")
                 if post_gender == "male":
                     Users =CustomUser.objects.filter(gender="female")
                     for user in Users:
@@ -84,7 +87,7 @@ def user_registration(request):
 
                 return redirect('login')
             else:
-                messages.success(request,"Account associated with email already exists")
+                messages.success(request,"An Error occurred please try again later")
                 return redirect('register')
 
             
@@ -137,6 +140,12 @@ def profile(request):
 
 @login_required
 def userprofile(request,user_name):
-    return render(request,'profile.html')
+    user_req = CustomUser.objects.get(username=user_name)
+    found_user = Userprofile.objects.get(user_id=user_req.id)
+    if user_req and found_user is not None:
+        return render(request,'profile2.html',{'founduser':found_user,'userreq':user_req})
+    else:
+        return render(request,'profile2.html')
+        
 
     

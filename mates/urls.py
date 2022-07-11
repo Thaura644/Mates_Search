@@ -16,3 +16,4 @@ urlpatterns = [
     path("notifier/",views.notifications_data,name="notifications_data"),
     path("profile/<slug:user_name>",views.userprofile,name="userprofile")
 ]
+

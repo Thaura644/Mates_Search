@@ -67,6 +67,11 @@ class ProfileForm(forms.Form):
                 
         
         
+class UpdateProfileForm1(forms.Form):
+    location
+    class Meta:
+        model = CustomUser
+        fields = ('location','phone_number','height','date_of_birth','email','status','university','gender')
 
 
 

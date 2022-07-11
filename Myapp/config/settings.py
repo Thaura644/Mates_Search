@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'mates'
+    'mates',
+    'imagekit'
 ]
 
 MIDDLEWARE = [
@@ -129,6 +130,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"), )
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = (os.path.join(BASE_DIR, "media"),)
 EMAIL_USE_TLS =True
 EMAIL_HOST ='stmp.gmail.com'
 EMAIL_HOST_USER = 'parishniclaus@gmail.com'

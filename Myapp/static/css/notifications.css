@@ -68,8 +68,8 @@ text-decoration: none;
     height: 40px;
 }
 .notification-dot{
-    width:15px;
-height: 15px;
+    width:20px;
+height: 20px;
 display: flex;
 align-items: center;
 justify-content: center;
@@ -245,6 +245,10 @@ padding: 3px;
         .nav-bar-inner{
             width: 90%;
 
+        }
+        .notification-dot{
+           
+            margin-right: 36px;
         }
         .notifications-bar{
             right: 100px;

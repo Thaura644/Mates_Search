@@ -37,7 +37,7 @@ box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8p
 }
 .discover-cont,.messages-cont,.activities-cont,.search-cont,.notifications-cont{
     display: flex;
-    flex-direction: column;
+ flex-direction: column;
     cursor: pointer;
     align-items: center;
     justify-content: center;
@@ -51,6 +51,7 @@ box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8p
     } 
 .img-nav{
     width: 20px;
+    cursor: pointer;
     height: 20px;
 }
 
@@ -71,9 +72,9 @@ box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8p
     display: flex;
     align-items: center;
     justify-content: center;
- 
     width:50px;
     border-radius: 50%;
+    cursor: pointer;
     height:50px
 
 }
@@ -89,7 +90,7 @@ box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8p
 }
 .profile-change-pwd{
     display: flex;
-    cursor: pointer;
+  
     flex-direction: row;
     width:200px;
     margin-top:10px ;
@@ -130,13 +131,45 @@ box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8p
     align-items: center;
 
 }
+.profile-interests-cont{
+    display: flex;
+    flex-direction: row;
+
+}
+.profile-interest-little{
+    display: flex;
+    flex-direction: row;
+    font-size: 12px;
+    margin-top: 10px;
+    background-color: #f3e6f3;
+    border-radius: 20px;
+    
+    margin-right: 3px;
+    min-width:90px ;
+    max-width: auto;
+    margin-bottom: 50px;
+    justify-content: center;
+    align-items: center;
+}
+.profile-logout-btn2{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-top: 30px;
+    height: 30px;
+    flex-direction: column;
+  
+    border-radius: 15px ;
+    width: 170px;
+
+}
 .profile-logout-btn{
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: flex-start;
     height: 30px;
-    cursor: pointer;
-    border: 1px solid rgb(189, 183, 183);
+    flex-direction: column;
+  
     border-radius: 15px ;
     width: 170px;
 
@@ -146,27 +179,36 @@ box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8p
     height: 20px;
     margin-right: 10px;
 }
-.profile-logout-btn>a{
+.profile-logout-btn>a,.profile-logout-btn2>a{
     font-weight: bold;
     text-decoration: none;
     font-size: 15px;
     color: rgb(206, 42, 42);
 }
-.profile-share-btn{
+.profile-user-account,.profile-share-btn{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     height: 30px;
-    cursor: pointer;
+    flex-direction:row;
+   
     
-    border: 1px solid rgb(189, 183, 183);
-    border-radius: 15px ;
+   border-radius: 15px ;
     width: 170px;
+}
+.profile-usrname{
+    font-size:17px;
+    font-weight:bold;
+    
+ 
+   
+
+
 }
 .profile-share-btn>p{
     font-size: 15px;
-    color:#bb35bb;
-    font-weight: 500;
+  
+    font-weight: 600;
 }
 .profile-nav-cont{
     display: flex;
@@ -180,14 +222,14 @@ box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8p
     
 }
 .profile-personal-details{
-  display: flex;
+    display: flex;
  
     flex-direction: row;
       width:auto;
       background-color: #f3e6f3;
       border-radius: 5px;
       padding: 10px;
-      margin:80px;
+      margin:70px;
       box-shadow: 0px 0px 2.2px 1.4px rgb(223, 219, 219);
   
     justify-content: flex-start;
@@ -208,16 +250,16 @@ box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8p
 .profile-personal-cont2{
     margin-left: 20px;
 }
-.profile-name{
+.profile-about{
     display: flex;
     flex-direction: row;
     width: 170px;
     align-items: center;
     justify-content: center;
 }
-.profile-name>p{
-    font-weight: bold;
-    font-size: 19px;
+.profile-about>p{
+
+    font-size: 15px;
     font-family: Arial, Helvetica, sans-serif;
     color: black;
 }
@@ -257,67 +299,97 @@ box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8p
     flex-direction: column;
     margin: auto;
     background-color: white;
-
+  
+  
+    border-radius: 30px;
     width: 60%;
 }
-.edit-btn:hover{
-opacity:1
-}
-
-.tooltip {
-    position: relative;
-    display: flex;
-    justify-content:center;
-    align-items:center;
-  }
-  
-  .tooltip .tooltiptext {
-    visibility: hidden;
-    width: 140px;
-    background-color: #555;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px;
-    position: absolute;
-    z-index: 1;
-    bottom: 150%;
-    left: 50%;
-    margin-left: -75px;
-    opacity: 0;
-    transition: opacity 0.3s;
-  }
-  
-  .tooltip .tooltiptext::after {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: #555 transparent transparent transparent;
-  }
-  
-  .tooltip:hover .tooltiptext {
-    visibility: visible;
+.love-btn:hover{
     opacity: 1;
-  }
-.edit-btn{
+
+}
+.love-btn{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    opacity:0.8;
+    width: 60px;
     position: absolute;
-    bottom:5;
-    right: 20;
-    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    bottom:0;
+    top: 100;
+    opacity: 0.8;
+    paddding:10px;
+    
+    right: 10;
     cursor: pointer;
+    box-shadow: 0px 0px 2.2px 1.4px rgb(223, 219, 219);
+  
+    height: 60px;
+    background-color:white;
+    
+    border-radius: 50%;
+}
+.x-btn-img{
+    height:13px;
+    width: 20px;
+}
+.x-btn:hover{
+    opacity: 1;
+}
+.x-btn{
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    opacity: 0.9;
+    position: absolute;
+    bottom:0;
+    left: 0;
+    box-shadow: 0px 0px 2.2px 1.4px rgb(223, 219, 219);
+  
     height: 40px;
     background-color:white;
     
     border-radius: 50%;
+}
+.online-cont{
+    width:7px;
+    background-color:rgb(82, 185, 82);
+    border-radius:50px;
+    height:7px;
+    margin-left:5px;
+
+}
+.online-status{
+    font-size:10px;
+    font-weight:400;
+    margin-left:5px;
+}
+.msg-btn:hover{
+    opacity: 1;
+ 
+}
+.msg-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    opacity: 0.8;
+    position: absolute;
+    bottom:0;
+    cursor: pointer;
+    right: 0;
+    box-shadow: 0px 0px 2.2px 1.4px rgb(223, 219, 219);
+  
+    height: 40px;
+    background-color:white;
+    
+    border-radius: 50%;
+}
+.prof-love{
+    width: 90%;
+    height: 90%;
+    
 }
 .profile-image{
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
@@ -325,14 +397,15 @@ opacity:1
     align-items: center;
     justify-content: center;
     width:170px;
-
+    margin-top: 13px;
+    margin-bottom: 13px;
     position: relative;
-    border-radius: 50%;
+    border-radius: 50px;
     height:170px
 }
 .profile-img{
-    width: 130px;
-    height: 130px;
+    width: 170px;
+    height: 170px;
 
 }
 .profile-change-pwd{
@@ -521,7 +594,7 @@ opacity:1
       line-height: 10px;
       border-radius: 10px;
     }
-    @media screen and (max-width: 500px) {
+    @media screen and (max-width: 768px) {
         /* the header here should be set to only show it's icons */
         .footer{
           float: none;
@@ -545,11 +618,25 @@ opacity:1
             display: none !important;
         }.profile-cont-inner{
             width: 100%;
+        }.profile-logout-btn{
+            display: none;
+
         }
         .profile-personal-details{
             width: 70%;
         }
+        
     
       }
+      @media screen and (min-width: 768px) {
+    .profile-logout-btn{
+        display: none;
+
+    }
+
+
+}
+
+
 
       

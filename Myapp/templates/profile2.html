@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<!--profile data after a search or link-->
 {% extends 'base.html' %}
 {% block content %} <!--Where everything begins - similar to start of a program-->
 
@@ -9,7 +11,7 @@
     
     <title>{% block title %}Mates Search | Profile{% endblock %}</title><!--Title of the base file-->
 
-    <link rel="stylesheet" href="{% static 'css/profile.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/profile2.css' %}" type="text/css">
 
 </head>
 <body>
@@ -48,13 +50,14 @@
                 </div>
     
             </div>
-            <div  class="profile-cont">
+            <div  onclick="changeLocation()" class="profile-cont">
                 <img class="img-nav" src="{% static 'images/profile.png'%}"/>
     
             </div>
         </div>
     
     </div>
+    
     
 <div class="profile-cont23">
     <div class="profile-cont-inner">
@@ -63,40 +66,72 @@
         <div class="profile-image">
             <img class="profile-img" src="{% static 'images/profile.png'%}"/>
        <div class="edit-btn">
-        <img class="edit-btn-img" src="{%static 'images/edit-img.png'%}"/>
+        <img class="msg-btn" src="{%static 'images/msg.png'%}"/>
+               
+
+       </div>
+       <div class="love-btn">
+        <img class="prof-love" src="{%static 'images/love.png'%}"/>
                
 
        </div>
 
+       <div class="x-btn">
+        <img class="x-btn-img" src="{%static 'images/x.png'%}"/>
+               
+
+       </div>
         </div>
-        <div class="profile-change-pwd">
-            <img class="log-out-x" src="{%static 'images/key.png'%}"/>
-          
-<p>Change Password</p>
-        </div>
-        
-    </div>
-    <div class="profile-owner-details">
-        <div class="tooltip profile-share-btn" onmouseout="outFunc()" onclick="shareprofile()">
-            <span class="tooltiptext" id="myTooltip">Copy link to clipboard</span>
- 
-            <img class="log-out-x" src="{%static 'images/link.png'%}"/>
-            <p>Share Profile</p>
+        <div class="profile-user-account">
+            <p class="profile-usrname">@{{userreq.username}}</p>
+            <div class="online-cont">
+
+            </div>
+            <p class="online-status">Online</p>
        
 
         </div>
-        <div class="profile-name">
-            
-            <p id="usrname">@{{user.username}}</p>
-            <div class="edit-btn-profile">
-            <img class="profile-mini-img" src="{%static 'images/edit.png'%}"/>
-               </div>
+        <div class="profile-logout-btn2">
+            <a class="btn btn-danger" href="{% url 'logout' %}">Interests</a>
+              <div class="profile-interests-cont">
+                <div class="profile-interest-little"><p>jogging</p></div>
+                <div class="profile-interest-little"><p>jogging</p></div>
+                <div class="profile-interest-little"><p>jogging</p></div>
+     
+                <div class="profile-interest-little"><p>jogging</p></div>
+     
+                </div>
+         </div>
+        
+    </div>
+    
+    <div class="profile-owner-details">
+        
+        <div class="profile-share-btn">
+            <p>About</p>
+            <p></p>
+       
+
+        </div>
+        <div class="profile-about">
+            {% if founduser.about %}
+            <p>{{founduser.about}}</p>
+            {% else %}
+            <p>I'm John Doe an undergrad studying Medicine at the University of Kilifonia.I'm looking for a financially stable woman aged 24-30.</p>
+         {% endif %}
         </div>
         <div class="profile-logout-btn">
-            <img class="log-out-x" src="{% static 'images/log-out.png'%}"/>
-            <a type="button" class="btn btn-danger" href="{% url 'logout' %}">Log Out</a>
-                    
+           <a class="btn btn-danger" href="{% url 'logout' %}">Interests</a>
+             <div class="profile-interests-cont">
+               <div class="profile-interest-little"><p>jogging</p></div>
+               <div class="profile-interest-little"><p>jogging</p></div>
+               <div class="profile-interest-little"><p>jogging</p></div>
+    
+               <div class="profile-interest-little"><p>jogging</p></div>
+    
+               </div>
         </div>
+   
 
     </div>
     </div>
@@ -104,42 +139,42 @@
         <div class="profile-personal-cont1">
             <div class="location-cont">
                 <img class="profile-mini-imgs" src="{%static 'images/location.png'%}"/>
-                <p>location</p>
+                <p>{{founduser.location}}</p>
             </div>
             <div class="email-cont">
                 <img class="profile-mini-imgs" src="{%static 'images/mail.png'%}"/>
                
-                <p>{{user.email}}</p>
+                <p>{{userreq.email}}</p>
             </div>
             <div class="height-cont">
                 <img class="profile-mini-imgs" src="{%static 'images/height.png'%}"/>
                
-                <p>height</p></div>
+                <p>{{founduser.height}}</p></div>
             <div class="university-cont">
                 <img class="profile-mini-imgs" src="{%static 'images/dob.png'%}"/>
                
-                <p>DOB</p></div>
+                <p>{{founduser.age}}</p></div>
 
         </div>
         <div class="profile-personal-cont2">
             <div class="location-cont">
                 <img class="profile-mini-imgs" src="{%static 'images/phone.png'%}"/>
                
-                <p>phone number</p>
+                <p>{{founduser.phone_number}}</p>
             </div>
             
             <div class="height-cont">
                 <img class="profile-mini-imgs" src="{%static 'images/bino.png'%}"/>
                
-                <p>Status</p></div>
+                <p>{{founduser.status}}</p></div>
             <div class="university-cont">
                 <img class="profile-mini-imgs" src="{%static 'images/university.png'%}"/>
                
-                <p>{{user.university}}</p></div>
+                <p>{{userreq.university}}</p></div>
                 <div class="university-cont">
                     <img class="profile-mini-imgs" src="{%static 'images/gender.png'%}"/>
                    
-                    <p>{{user.gender}}</p></div>
+                    <p>{{userreq.gender}}</p></div>
         </div>
      
     </div>
@@ -147,90 +182,16 @@
 </div>
 
 </div>
-<div class="profile-nav-cont">
-  
-    <div class="profile-nav-inner">
-        <p>Bio</p>
-    </div>
-  
-   
 
-  </div>
-<div class="profile-form">
-    <div class="profile-form-inner1">
-        <div class="interest-div">
-            <div class="interest-div-cont1">
-                <p class="interest-under">*Increase your chances of finding a match</p>
-            
-            <p class="interest-div-cont1-text">Type the interests that you have</p>
-           <input placeholder="Cooking,surfing.."class="interest-intput"/>
-            </div>
-            <div class="interest-div-cont2">
-               
-           
-            </div>
-            
-        </div>
-    </div>
-    <div class="profile-form-inner">
-        <div class="interest-div">
-            <div class="interest-div-cont1">
-            <p  class="cont-title">About you</p>
-            <textarea placeholder="I'm John doe an undergrad at .... and am searching for.."class="about-you-input"></textarea>
-            </div>
-        <div class="interest-div-cont5">
-            
-        </div>
-            
-        </div>
-    </div>
     
-    <div class="profile-form-inner2">
-        <div class="interest-div">
-            <div class="interest-div-cont1">
-            <p class="cont-title">Select your favorite color</p>
-            </div>
-        <div class="interest-div-cont3">
-            <input style="margin-left: 10px;"type="color"></input>
-        </div>
-            
-        </div>
-        </div>
-    <div class="profile-form-inner2">
-        <div class="interest-div">
-            <div class="interest-div-cont1">
-            <p class="cont-title">Language Skills</p>
-            </div>
-        <div class="interest-div-cont3">
-            <button type="submit">+ Add Languages</button>
-        </div>
-            
-        </div>
-        
-        
 </div>
 
-<div class="interest-div-cont2">
-    <button type="submit">Update Bio</button>
-</div>
-    
-    
-</div>
 <script>
-    function shareprofile(){
-        var copyText = document.getElementById("usrname");
-        console.log(copyText)
-        copyText.select();
-        copyText.setSelectionRange(0, 99999);
-        navigator.clipboard.writeText("http://127.0.0.1:8000/app/profile/"+copyText.value);
-
-    }
-    function outFunc() {
-  var tooltip = document.getElementById("myTooltip");
-  tooltip.innerHTML = "Copy to clipboard";
+    function changeLocation(){
+    window.location ="/app/profile/"
 }
 </script>
-
 </body>
 
 {% endblock %}
+</html>
