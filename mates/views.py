@@ -44,7 +44,7 @@ def user_registration(request):
     return render(request,'sign-up.html',)
 
 
-@login_required
+# @login_required
 def discover(request):
     context = {}
     return render(request, 'discover.html', context)

@@ -11,37 +11,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Mates Search || Meet Jovial{ % endblock % }</title>
+    <title>{% block title %}Mates Search || Meet Jovial {% endblock %}</title>
     <link rel="stylesheet" href="{% static 'css/discover.css' %}" type="text/css">
-
-    <!-- <link rel="stylesheet" href="{% static 'css/notifications.css' %}" type="text/css"> -->
 </head>
 <body>
    
-    <!-- <div >
-        <img src="{% static 'images/loader.gif' %}"/>
-    </div> -->
-    <div >
-    <!-- <nav>
-        <div class="nav-left">
-            <img src="https://img.icons8.com/dotty/80/000000/circled-j.png" class="logo"/>
-            <ul>
-                <li><img src="https://img.icons8.com/external-kiranshastry-lineal-kiranshastry/64/000000/external-notification-business-kiranshastry-lineal-kiranshastry-1.png"/>notification</li>
-                <li><img src="https://img.icons8.com/wired/64/000000/imessage.png"/>inbox</li>
-                <li><img src="https://img.icons8.com/ios-filled/50/000000/video.png"/>videos</li>
-
-            </ul>
-        </div>
-        <div class="nav-right">
-            <div class="search-box">
-                <img src="{ % static 'images/search.png' %}" >
-                <input type="text" placeholder="Search">
-            </div>
-            <div class="nav-user-icon online">
-                <img src="{ % static 'images/profile-pic.png' %}" >
-            </div>
-        </div>
-    </nav> -->
+    
 
     <!-- --------- Theee  main nav------ -->
     <nav>
@@ -61,10 +36,10 @@
                             <img class="img-nav" src="{% static 'images/messages.png'%}"/>
         <a  href="#"style="color: black;">Messages</a>
                     </div>
-                    <div class="activities-cont">
+                    <!-- <div class="activities-cont">
                           <img class="img-nav" src="{% static 'images/activity.png'%}"/>
                         <a href="#" style="color: black;">Activities</a>
-                    </div>
+                    </div> -->
                     <div class="search-cont">
                         <img class="img-nav" src="{% static 'images/search.svg'%}"/>
                         
@@ -91,17 +66,18 @@
 
     <!--  --------------- End of theeeee main nav --------------  -->
     
+   
     <div class="body">
-    
     <div class="container">
         <!--  --------left-sidebar ----------- -->
         <div class="left-sidebar">
             <div class="imp-links">
-                <a href="#"><img src="{% static 'images/friends.png' %}">Friends</a>
-                <a href="#"><img src="{% static 'images/news.png' %}">Latest news</a>
-                <a href="#"><img src="{% static 'images/group.png' %}">Groups</a>
-                <a href="#"><img src="{% static 'images/marketplace.png' %}">marketplace</a>
-                <a href="#"><img src="{% static 'images/watch.png' %}">Watch</a>
+                <a href="#"><img src="https://img.icons8.com/fluency/48/000000/user-group-man-man.png" />Friends</a>
+                <a href="#"><img src="https://img.icons8.com/color/48/000000/rss.png" />Latest news</a>
+                <a href="#"><img src="https://img.icons8.com/color/48/000000/groups.png" />Groups</a>
+                <a href="#"><img src="https://img.icons8.com/fluency/48/000000/shopping-cart-with-money.png" />marketplace</a>
+                <a href="#"><img
+                    src="https://img.icons8.com/external-flaticons-flat-flat-icons/64/000000/external-tv-100-most-used-icons-flaticons-flat-flat-icons-2.png" />Watch</a>
                 <a href="#">See More</a>
             </div>
             <div class="shortcut-links">
@@ -116,19 +92,73 @@
 
          <!--  --------main-sidebar ----------- -->
         <div class="main-content">
-            <!-- <div class="story-gallery">
+             <div class="story-gallery">
                 <div class="story">
-                    <img src="images/upload.png" >
-                    <p>Meet or mate</p>
+                    <img src="{% static 'images/upload.png' %}" >
+                    <p>Post Story</p>
                 </div>
-            </div>         --------- this story feature is not a must-->
+                <div class="story story1">
+                    <img src="{% static 'images/upload.png' %}">
+                    <p>User.name</p>
+                </div>
+                <div class="story story2">
+                    <img src="{% static 'images/upload.png' %}">
+                    <p>User.name</p>
+                </div>
+                <div class="story story3">
+                    <img src="{% static 'images/upload.png' %}">
+                    <p>User.name</p>
+                </div><div class="story story4">
+                    <img src="{% static 'images/upload.png' %}">
+                    <p>User.name</p>
+                </div>
+
+                <div class="story story5">
+                    <img src="{% static 'images/upload.png' %}">
+                    <p>x</p>
+                </div>
+                <div class="story story6">
+                    <img src="{% static 'images/upload.png' %}">
+                    <p>pamela</p>
+                </div>
+            </div>        
+             <!-- ------- this story feature is not a must--------------- -->
         
             <div class="write-post-container">
                 <div class="user-profile">
-                    <img src="{ % static 'images/profile-pic.png' % }" >
+                    <img src="{% static 'images/profile-pic.png' %}" >
                     <div>
                         <p>John Nichola</p>
-                        <small> </small>
+                        <small>Public <i class="fas fa-caret-down"></i> </small>
+                    </div>
+                </div>
+
+                <div class="post-input-container">
+                    <textarea rows="3" placeholder="What's on your mind?"></textarea>
+                    <div class="add-post-links">
+                        <a href="#"> <img src="{% static 'images/live-video.png' %}">Live Video </a>
+                        <a href="#"> <img src="{% static 'images/photo.png' %}"> Photo/video</a>
+                        <a href="#"> <img src="{% static 'images/feeling.png' %}">Feeling</a>
+                    </div>            
+                </div>
+            </div>
+            <div class="post-container">
+                <div class="user-profile">
+                    <img src="{% static 'images/profile-pic.png' %}">
+                    <div>
+                        <p>John Nichola</p>
+                        <span>June 24 2022, 13:40pm </span>
+                    </div>
+                </div>
+                <p class="post-text">Yow!! <span>Mates_Search</span> IN development <a href="#"> Mates_Search</a> </p>
+                <img src="{% static 'images/feed-image-1.png' %}" class="post-img">
+                <div class="post-row">
+                    <div class="activity-icons">
+                        <div> <img src="{% static 'images/like-blue.png' %}" alt=""></div>
+                        <div> <img src="{% static 'images/pass.png' %}" alt=""></div>
+                    </div>
+                    <div class="post-profile-icon">
+
                     </div>
                 </div>
             </div>
@@ -166,9 +196,42 @@
                     <a href="#">More info</a>
                 </div>
             </div>
+            <div class="sidebar-title">
+                <h4>Advertisement</h4>
+                <a href="#" style="color: #dd6595;">Close</a>
+            </div>
+            <img src="{% static 'images/advertisement.png' %}" class="sidebar-ads">
+        <div class="sidebar-title">
+            <h4>Conversation</h4>
+            <a href="#" style="color: #dd6595;">Hide chat</a>
+        </div>
+
+        <div class="online-list">
+            <div class="online">
+                <img src="{% static 'images/member-1.png' %}">
+
+            </div>
+            <p>Alison Mina</p>
+        </div>
+
+        <div class="online-list">
+            <div class="online">
+                <img src="{% static 'images/member-2.png' %}">
+        
+            </div>
+            <p>Alisteir Rahab</p>
+        </div>
+
+        <div class="online-list">
+            <div class="online">
+                <img src="{% static 'images/member-3.png' %}">
+        
+            </div>
+            <p>Diane Dina</p>
+        </div>
         </div>
     </div>
-    </div>
+</div>
     <!--Footer section-->
 	
 <!-- <section id="footer">
@@ -183,8 +246,7 @@
 	 -->
 	<!-- End of footer section--> 
     <a target="_blank" href="https://icons8.com/icon/I65PXTJWBC7v/notification"></a>
-    </div>
+    
 </body>
-{% endblock %}
 {% endblock %}
 </html>

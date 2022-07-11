@@ -10,9 +10,9 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
+import os
 from pathlib import Path
 
-import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -86,11 +86,10 @@ WSGI_APPLICATION = 'Myapp.config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'Mates_Search',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST': '127.0.0.1',
-        'PORT': '5433', }
+    	'OPTIONS': {
+        	'read_default_file': '/etc/mysql/my.cnf',
+    	},
+        }
 }
 # 'HOST': '/Applications/XAMPP/xamppfiles/var/mysql/mysql.sock', 
 # Password validation
@@ -134,3 +133,4 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"), )
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+#STATIC_ROOT = os.path.join(BASE_DIR, 'static')

@@ -1,14 +1,12 @@
 body{
     display: flex;
     flex-direction: column;
-    margin: 0;
+    margin: 0;  
     overflow-y: hidden;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
 }
-nav{
-    color: white;
-}
+
 nav{
     color: black;
     background-color: #fff;
