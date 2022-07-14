@@ -1,0 +1,41 @@
+fieldset {
+          background: #DD95DD;
+          border: 10px lighter pink;
+          margin-bottom: 10px;
+          width: 720px
+        }
+        
+        label {
+          width: 180px;
+          display: inline-block;
+          text-align: right;
+          vertical-align: top
+        }
+        
+        label:hover {
+          font-size: 28px
+        }
+        
+        span {
+          text-align: center;
+          vertical-align: top
+        }
+        
+        textarea {
+          width: 360px;
+          height: 50px
+        }
+        
+        .left {
+          background:lighter pink;
+          color: black
+        }
+        
+        .right {
+          background:lighter pink;
+          color: black
+        }
+        
+        #method {
+          width: auto
+        }

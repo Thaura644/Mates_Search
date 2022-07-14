@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+{% block content %} {% load static %}
+<html>
+  <head>
+    <title>{% block title %} Mates_Search || Profile {% endblock %}</title>
+    <link href="{% static 'profile.css' %}" rel="stylesheet" />
+  </head>
+
+  <body>
+    <a href="#"
+      ><img
+        src="https://images.app.goo.gl/39BReVLoeRYLdznA7"
+        alt="Mate Search"
+        width="70"
+        height="70"
+    /></a>
+    <div id="main">
+      <h2>Please Enter Your Details!</h2>
+      <form action="" method="post" enctype="multipart/form-data">
+        <fieldset class="fieldset">
+          <legend>Your Picture</legend>
+          <label for="image">Your image: </label>
+          <input type="file" name="fileToUpload" required />
+        </fieldset>
+
+        <fieldset>
+          <legend>Your General Details</legend>
+          <label for="name">Name: </label>
+          <input type="text" name="name" required />
+          <br />
+          <label for="gender">Gender: </label>
+          <input type="radio" name="gender" value="male" required /> Male
+          <input type="radio" name="gender" value="female" required /> Female
+          <br />
+          <label for="age">Age: </label>
+          <input type="number" name="age" required />
+          <br />
+          <label for="birthday">Date of birth: </label>
+          <input type="date" name="birthday" />
+          <br />
+          <label for="color">Favorite color: </label>
+          <input type="color" name="color" />
+          <br />
+          <label for="Universities">Which university: </label>
+          <select name="university">
+            <option value=""></option>
+            <option value="KABARAK">KABARAK</option>
+            <option value="STRATHMORE">STRATHMORE</option>
+            <option value="JKUAT">JKUAT</option>
+            <option value="USIU">USIU</option>
+            <option value="DAYSTAR">DAYSTAR</option>
+            <option value="KU">KU</option>
+            <option value="TUK">TUK</option>
+            <option value="Others">Others</option>
+            <input type="others" name="others" />
+          </select>
+        </fieldset>
+
+        <fieldset>
+          <legend>Your Indicators</legend>
+          <label for="height">Height: </label>
+          <span class="left"> Short </span>
+          <input type="range" min="0" max="100" value="50" name="height" />
+          <span class="right">Tall</span>
+          <br />
+          <label for="salary">Salary: </label>
+          <span class="left"> Poor </span>
+          <input type="range" min="0" max="100" value="50" name="salary" />
+          <span class="right"> Rich </span>
+        </fieldset>
+
+        <fieldset>
+          <legend>Your Contact Information</legend>
+          <label for="email">Email: </label>
+          <input type="email" name="email" required />
+          <br />
+          <label for="mobile">Mobile: </label>
+          <input type="tel" name="mobile" />
+          <br />
+          <label for="address">Address: </label>
+          <textarea
+            rows="4"
+            cols="50"
+            name="address"
+            placeholder="Input your address here..."
+          ></textarea>
+          <br />
+          <label for="contact_method" id="method"
+            >Method to contact you:
+          </label>
+          <input type="checkbox" name="method1" value="email" /> Email
+          <input type="checkbox" name="method2" value="whatsapp" /> Whatsapp
+          <input type="checkbox" name="method3" value="inappchat" /> In-app chat
+        </fieldset>
+
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+  </body>
+
+  {% endblock %}
+</html>
